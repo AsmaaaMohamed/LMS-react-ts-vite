@@ -1,66 +1,56 @@
-import "./PostCategoryWidget.css";
-
-const PostCategorWidget = () => {
+const ArchiveWidget = () => {
   return (
-    <div className="widget widget-category">
+    <div className="widget widget-archive">
       <div className="widget-header">
-        <h5 className="title">Post Category</h5>
+        <h5 className="title">Our Archives</h5>
       </div>
       <ul className="widget-wrapper">
         <li>
           <a href="#" className="d-flex flex-wrap justify-content-between">
             <span>
-              <i className="icofont-double-right icofont"></i>Themeforest
+              <i className="icofont-double-right icofont"></i>January
             </span>
-            <span>06</span>
+            <span>2021</span>
           </a>
         </li>
         <li>
           <a href="#" className="d-flex flex-wrap justify-content-between">
             <span>
-              <i className="icofont-double-right icofont"></i>Photodune
+              <i className="icofont-double-right icofont"></i>February
             </span>
-            <span>11</span>
+            <span>2021</span>
           </a>
         </li>
         <li>
           <a href="#" className="d-flex flex-wrap justify-content-between">
             <span>
-              <i className="icofont-double-right icofont"></i>Codecanyon
+              <i className="icofont-double-right icofont"></i>March
             </span>
-            <span>07</span>
+            <span>2021</span>
           </a>
         </li>
         <li>
           <a href="#" className="d-flex flex-wrap justify-content-between">
             <span>
-              <i className="icofont-double-right icofont"></i>GRaphicdriver
+              <i className="icofont-double-right icofont"></i>April
             </span>
-            <span>09</span>
+            <span>2021</span>
           </a>
         </li>
         <li>
           <a href="#" className="d-flex flex-wrap justify-content-between">
             <span>
-              <i className="icofont-double-right icofont"></i>Wordpress
+              <i className="icofont-double-right icofont"></i>June
             </span>
-            <span>50</span>
+            <span>2021</span>
           </a>
         </li>
         <li>
           <a href="#" className="d-flex flex-wrap justify-content-between">
             <span>
-              <i className="icofont-double-right icofont"></i>Joomla
+              <i className="icofont-double-right icofont"></i>July
             </span>
-            <span>20</span>
-          </a>
-        </li>
-        <li>
-          <a href="#" className="d-flex flex-wrap justify-content-between">
-            <span>
-              <i className="icofont-double-right icofont"></i>3docean
-            </span>
-            <span>93</span>
+            <span>2021</span>
           </a>
         </li>
       </ul>
@@ -68,4 +58,4 @@ const PostCategorWidget = () => {
   );
 };
 
-export default PostCategorWidget;
+export default ArchiveWidget;

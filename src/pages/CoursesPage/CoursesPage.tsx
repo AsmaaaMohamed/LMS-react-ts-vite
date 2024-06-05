@@ -1,7 +1,7 @@
 import { Fragment } from "react";
-import CustomFilter from "../CustomFilter";
+import CustomFilter from "@components/common/CustomFilter/CustomFilter";
 import { PageHeader } from "@components/common";
-import CourseCard from "../CourseCard";
+import CourseCard from "@components/lms/CourseCard/CourseCard";
 import { Form } from "react-bootstrap";
 import "./CoursesPage.css";
 

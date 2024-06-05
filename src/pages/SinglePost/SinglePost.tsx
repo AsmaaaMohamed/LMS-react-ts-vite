@@ -6,8 +6,8 @@ import Comment from "@components/common/Comment/Comment";
 import { SearchWidget } from "@components/common";
 import PostCategorWidget from "@components/blog/PostCategoryWidget/PostCategoryWidget";
 import PostPopularWidget from "@components/blog/PostPopularWidget/PostPopularWidget";
-import ArchiveWidget from "../ArchiveWidget";
-import GalleryWidget from "../GalleryWidget";
+import ArchiveWidget from "@components/blog/ArchiveWidget/ArchiveWidget";
+import GalleryWidget from "@components/blog/GalleryWidget/GalleryWidget";
 import PopularTagWidget from "@components/blog/Tag/PopularTagWidget";
 
 const SinglePost = () => {

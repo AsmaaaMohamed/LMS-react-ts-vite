@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import "./CourseDetails.css";
-import CourseSideDetails from "../CourseSideDetails";
-import CourseSideCategories from "../CourseSideCategories";
-import Author from "../Author";
-import Comment from "../Comment";
+import CourseSideDetails from "@components/lms/CourseSideDetails/CourseSideDetails";
+import CourseSideCategories from "@components/lms/CourseSideCategories/CourseSideCategories";
+import Author from "@components/common/Author/Author";
+import Comment from "@components/common/Comment/Comment";
 
 const CourseDetails = () => {
   return (
