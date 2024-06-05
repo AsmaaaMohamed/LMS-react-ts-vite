@@ -1,0 +1,112 @@
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote {
+    margin: 0 0 20px;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote {
+    padding: 25px;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags li a .active,
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags li a:hover,
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote{
+    background: #f16126;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote cite, .navigations-part .right {
+    text-align: right;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote cite{
+    display: block;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags li a .active,
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags li a:hover,
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote,
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote cite a,
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote p,
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote:before{
+    color: #fff;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote:before {
+    content: "";
+    font-family: IcoFont !important;
+    font-size: 29px;
+    height: 40px;
+    width: 40px;
+    display: flex;
+    align-items: center;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content {
+    padding: 50px 30px;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags li{
+    padding: 0;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .video-thumb,
+.blog-single .section-wrapper .post-item .post-inner .post-content blockquote{
+    position: relative;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section {
+    border-top: 1px solid #ecf0f3;
+    margin: 40px -30px -25px;
+    padding: 23px 30px 0;
+    align-items: center;
+    justify-content: space-between;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags,
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section{
+    display: flex;
+    flex-wrap: wrap;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags{
+    margin: 0;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags,
+.blog-single .section-wrapper .post-item .post-inner .post-content iframe,
+.blog-single .section-wrapper .post-item .post-inner .post-content img,
+.blog-single .section-wrapper .post-item .post-inner .post-thumb img{
+    width: 100%;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags li {
+    margin: 5px;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags li a {
+    border: 1px solid #ecf0f3;
+    border-radius: 2px;
+    padding: 5px 18px;
+}
+.blog-single .section-wrapper .post-item .post-inner .post-content h2{
+    margin-bottom: 10px;
+}
+
+.blog-single .section-wrapper .post-item .post-inner .post-content .video-thumb .video-button,
+.contact-info-section .section-wrapper .cinfo-or:after,
+.contact-info-section .section-wrapper .cinfo-or:before,
+.count-item .count-inner .count-icon:after,
+.count-item .count-inner .count-icon:before,
+.newsletters-section .newsletter-area .news-mass,
+.newsletters-section .newsletter-area .news-mass:after,
+.newsletters-section .newsletter-area .news-mass:before,
+.newsletters-section .newsletter-area:after,
+.post-item.qute-post .post-inner .post-thumb .qute-content,
+.post-item.video-post .post-thumb .video-button {
+    content: "";
+    left: 50%;
+    position: absolute;
+    top: 50%;
+    -webkit-transform: translate(-50%, -50%);
+    transform: translate(-50%, -50%);
+}
+@media (min-width: 768px){
+    .blog-single .section-wrapper .post-item .post-inner .post-content blockquote p {
+        font-size: 18px;
+        line-height: 30px;
+        padding-left: 60px;
+    }
+}
+@media (min-width: 768px){
+    .blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags {
+        width: 50%;
+    }
+}
+@media (min-width: 992px){
+    .blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .tags li:first-child {
+        margin-left: 0;
+    }
+}

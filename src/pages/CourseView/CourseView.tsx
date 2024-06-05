@@ -1,5 +1,5 @@
 import { Fragment } from "react";
-import PageHeader from "../PageHeader";
+import { PageHeader } from "@components/common";
 import "./CourseView.css";
 import Accordion from "react-bootstrap/Accordion";
 import Tab from "react-bootstrap/Tab";

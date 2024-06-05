@@ -5,6 +5,15 @@ import "./AppRouter.css";
 import CoursesPage from "@pages/CoursesPage/CoursesPage";
 import CourseView from "@pages/CourseView/CourseView";
 import CourseDetails from "@pages/CourseDetails/CourseDetails";
+import Blog from "@pages/Blog/Blog";
+import SinglePost from "@pages/SinglePost/SinglePost";
+import Shop from "@pages/Shop/Shop";
+import SingleProduct from "@pages/SingleProduct/SingleProduct";
+import Cart from "@pages/Cart/Cart";
+import Contact from "@pages/Contact/Contact";
+import Login from "@pages/Login/Login";
+import Register from "@pages/Register/Register";
+import ForgetPass from "@pages/ForgetPass/ForgetPass";
 
 const router = createBrowserRouter([
   {
