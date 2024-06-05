@@ -1,9 +1,9 @@
 import { Fragment } from "react";
 import "./SingleProduct.css";
-import SearchWidget from "../SearchWidget";
-import PostPopularWidget from "../PostPopularWidget";
-import PopularTagWidget from "../PopularTagWidget";
-import ProductCategoryWidget from "../ProductCategoryWidget";
+import {SearchWidget} from "@components/common";
+import PostPopularWidget from "@components/blog/PostPopularWidget/PostPopularWidget";
+import PopularTagWidget from "@components/lms/Tag/PopularTagWidget";
+import ProductCategoryWidget from "@components/ecommerce/Product/ProductCategoryWidget/ProductCategoryWidget";
 import { PageHeader } from "@components/common";
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Navigation } from "swiper/modules";
