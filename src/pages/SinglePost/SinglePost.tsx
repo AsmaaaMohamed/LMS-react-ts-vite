@@ -1,14 +1,14 @@
 import { Fragment } from "react";
 import "./SinglePost.css";
 import { PageHeader } from "@components/common";
-import Author from "../Author";
-import Comment from "../Comment";
-import SearchWidget from "../SearchWidget";
-import PostCategorWidget from "../PostCategorWidget";
-import PostPopularWidget from "../PostPopularWidget";
+import Author from "@components/common/Author/Author";
+import Comment from "@components/common/Comment/Comment";
+import { SearchWidget } from "@components/common";
+import PostCategorWidget from "@components/blog/PostCategoryWidget/PostCategoryWidget";
+import PostPopularWidget from "@components/blog/PostPopularWidget/PostPopularWidget";
 import ArchiveWidget from "../ArchiveWidget";
 import GalleryWidget from "../GalleryWidget";
-import PopularTagWidget from "../PopularTagWidget";
+import PopularTagWidget from "@components/blog/Tag/PopularTagWidget";
 
 const SinglePost = () => {
   return (

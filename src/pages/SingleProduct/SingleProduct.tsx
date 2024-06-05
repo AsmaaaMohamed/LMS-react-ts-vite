@@ -1,8 +1,8 @@
 import { Fragment } from "react";
 import "./SingleProduct.css";
-import {SearchWidget} from "@components/common";
+import { SearchWidget } from "@components/common";
 import PostPopularWidget from "@components/blog/PostPopularWidget/PostPopularWidget";
-import PopularTagWidget from "@components/lms/Tag/PopularTagWidget";
+import PopularTagWidget from "@components/blog/Tag/PopularTagWidget";
 import ProductCategoryWidget from "@components/ecommerce/Product/ProductCategoryWidget/ProductCategoryWidget";
 import { PageHeader } from "@components/common";
 import { Swiper, SwiperSlide } from "swiper/react";

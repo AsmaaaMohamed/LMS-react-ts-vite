@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import "./Cart.css";
 import { PageHeader } from "@components/common";
-import CartItem from "../CartItem";
+import CartItem from "@components/ecommerce/Cart/CartItem/CartItem";
 
 const Cart = () => {
   return (

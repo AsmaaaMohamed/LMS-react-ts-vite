@@ -1,11 +1,11 @@
 import { Fragment } from "react";
-import ProductCard from "../ProductCard";
+import ProductCard from "@components/ecommerce/Product/ProductCard/ProductCard";
 import "./Shop.css";
 import { PageHeader } from "@components/common";
-import SearchWidget from "../SearchWidget";
-import PostPopularWidget from "../PostPopularWidget";
-import PopularTagWidget from "../PopularTagWidget";
-import ProductCategoryWidget from "../ProductCategoryWidget";
+import { SearchWidget } from "@components/common";
+import PostPopularWidget from "@components/blog/PostPopularWidget/PostPopularWidget";
+import PopularTagWidget from "@components/blog/Tag/PopularTagWidget";
+import ProductCategoryWidget from "@components/ecommerce/Product/ProductCategoryWidget/ProductCategoryWidget";
 
 const Shop = () => {
   return (
