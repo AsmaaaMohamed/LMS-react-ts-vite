@@ -14,11 +14,13 @@ import Contact from "@pages/Contact/Contact";
 import Login from "@pages/Login/Login";
 import Register from "@pages/Register/Register";
 import ForgetPass from "@pages/ForgetPass/ForgetPass";
+import Error from "@pages/Error/Error";
 
 const router = createBrowserRouter([
   {
     path: "/",
     element: <MainLayout />,
+    errorElement:<Error/>,
     children: [
       {
         index: true,
