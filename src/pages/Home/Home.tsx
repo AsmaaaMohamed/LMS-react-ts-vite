@@ -9,12 +9,21 @@ import PopularCategory from "@components/lms/Category/PopularCategory";
 import InstructorCard from "@components/lms/Instructor/InstructorCard";
 import SkillCard from "@components/lms/Skill/SkillCard";
 import PostCard from "@components/blog/PostCard/PostCard";
-import { Fragment } from "react";
-import { useAppSelector } from "@store/hooks";
+import { Fragment, useEffect } from "react";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
+import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 
 const Home = () => {
+  const dispatch = useAppDispatch();
   const {records} = useAppSelector(state=> state.coursesCategories);
-  console.log(records);
+  useEffect(()=>{
+    dispatch(actGetCoursesCategories());
+  },[dispatch]);
+  const mappedCategories = records.map((record)=>{
+    return (
+        <PopularCategory key={record.id} {...record}/>
+    );
+  })
   return (
     <Fragment>
       <section className="banner-section">
@@ -183,30 +192,7 @@ const Home = () => {
           </div>
           <div className="section-wrapper">
             <div className="row g-4 justify-content-center row-cols-xl-4 row-cols-lg-3 row-cols-sm-2 row-cols-1">
-              <div className="col">
-                <PopularCategory />
-              </div>
-              <div className="col">
-                <PopularCategory />
-              </div>
-              <div className="col">
-                <PopularCategory />
-              </div>
-              <div className="col">
-                <PopularCategory />
-              </div>
-              <div className="col">
-                <PopularCategory />
-              </div>
-              <div className="col">
-                <PopularCategory />
-              </div>
-              <div className="col">
-                <PopularCategory />
-              </div>
-              <div className="col">
-                <PopularCategory />
-              </div>
+              {mappedCategories}
             </div>
           </div>
         </div>

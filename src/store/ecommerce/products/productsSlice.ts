@@ -1,5 +1,5 @@
 import { createSlice } from "@reduxjs/toolkit";
-import actGetCategories from "./act/actGetCategories";
+import actGetCategories from "./act/actGetProducts";
 import TLoading from "@customTypes/shared";
 import TCourseCategory from "@customTypes/courseCategory";
 
