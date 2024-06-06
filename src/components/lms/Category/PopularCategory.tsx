@@ -15,7 +15,7 @@ const PopularCategory = () => {
           />
         </div>
         <div className="category-content">
-          <a href="/course">
+          <a href="/">
             <h6>Computer Science</h6>
           </a>
           <span>24 Course</span>

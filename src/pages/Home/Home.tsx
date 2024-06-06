@@ -10,8 +10,11 @@ import InstructorCard from "@components/lms/Instructor/InstructorCard";
 import SkillCard from "@components/lms/Skill/SkillCard";
 import PostCard from "@components/blog/PostCard/PostCard";
 import { Fragment } from "react";
+import { useAppSelector } from "@store/hooks";
 
 const Home = () => {
+  const {records} = useAppSelector(state=> state.coursesCategories);
+  console.log(records);
   return (
     <Fragment>
       <section className="banner-section">
