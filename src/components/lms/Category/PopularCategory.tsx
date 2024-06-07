@@ -1,7 +1,7 @@
-import TCourseCategory from "@customTypes/courseCategory";
+import TCategory from "@customTypes/category";
 import "./PopularCategory.css";
 
-type TPopularCategoryProps = TCourseCategory;
+type TPopularCategoryProps = TCategory;
 const PopularCategory = ({title, icon, img}: TPopularCategoryProps) => {
   return (
     <div className="col">
