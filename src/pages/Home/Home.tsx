@@ -23,7 +23,7 @@ const Home = () => {
     return (
         <PopularCategory key={record.id} {...record}/>
     );
-  })
+  });
   return (
     <Fragment>
       <section className="banner-section">

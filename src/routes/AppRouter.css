@@ -63,7 +63,6 @@ p {
 input,
 select,
 textarea {
-  border: 1px solid #ecf0f3;
   outline: none;
 }
 .section-bg {
@@ -304,12 +303,10 @@ textarea {
 input,
 select,
 textarea {
-  border: 1px solid #ecf0f3 !important;
   outline: none !important;
 }
 .form-control:focus {
   color: var(--bs-body-color);
-  background-color: unset !important;
   border-color: #ecf0f3 !important;
   outline: 0;
   box-shadow: unset !important;

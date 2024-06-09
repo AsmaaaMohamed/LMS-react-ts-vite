@@ -31,9 +31,9 @@ header .navbar-nav {
   border: unset;
   background-color: transparent;
 }
-.form-select:focus,
-.form-select {
-  border: unset;
+.form-select.select-cat:focus,
+.form-select.select-cat {
+  border: unset !important;
   box-shadow: unset;
 }
 
