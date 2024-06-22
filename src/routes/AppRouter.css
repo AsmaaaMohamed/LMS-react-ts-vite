@@ -305,9 +305,14 @@ select,
 textarea {
   outline: none !important;
 }
-.form-control:focus {
+.form-control:focus{
   color: var(--bs-body-color);
   border-color: #ecf0f3 !important;
+  outline: 0;
+  box-shadow: unset !important;
+}
+.form-select:focus {
+  border-color: #ecf0f3;
   outline: 0;
   box-shadow: unset !important;
 }
@@ -346,6 +351,23 @@ ul.lab-ul {
 }
 ul.lab-ul li {
   list-style: none;
+}
+
+/* Courses Cards */
+.course-section .section-wrapper .col:nth-of-type(6n+2) .course-item .course-inner .course-content .course-category .course-cate a {
+  background: #00a556;
+}
+.course-section .section-wrapper .col:nth-of-type(6n+3) .course-item .course-inner .course-content .course-category .course-cate a {
+  background: #eec93d;
+}
+.course-section .section-wrapper .col:nth-of-type(6n+4) .course-item .course-inner .course-content .course-category .course-cate a {
+  background: #cf9fb7;
+}
+.course-section .section-wrapper .col:nth-of-type(6n+5) .course-item .course-inner .course-content .course-category .course-cate a {
+  background: #31aabd;
+}
+.course-section .section-wrapper .col:nth-of-type(6n+6) .course-item .course-inner .course-content .course-category .course-cate a {
+  background: #f79a3d;
 }
 /* Animation */
 @keyframes logo-spin {

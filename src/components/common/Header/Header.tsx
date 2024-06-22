@@ -9,12 +9,13 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { InputGroup } from "react-bootstrap";
 import "./Header.css";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 
 const Header = () => {
   const dispatch = useAppDispatch();
   const {records} = useAppSelector(state=> state.coursesCategories);
+  const [categorySearch , setCategorySearch] = useState("");
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
   },[dispatch]);
@@ -31,6 +32,10 @@ const Header = () => {
   const signupClickHandle = () => {
     navigate("/signup");
   };
+  const handleCategorySelect = (e)=>{
+    setCategorySearch(e.target.value);
+    console.log(e.target.value)
+  }
   return (
     <header className={navClass}>
       <Navbar expand="lg" className="bg-body-tertiary">
@@ -38,7 +43,7 @@ const Header = () => {
           <img src={Logo} height="52" />
         </Navbar.Brand>
         <Nav className="left-nav d-none d-xxl-flex">
-          <Form.Select aria-label="Default select example" className="select-cat">
+          <Form.Select aria-label="Default select example" className="select-cat" value={categorySearch} onChange={(e)=>handleCategorySelect(e)}>
             <option value="all">All Categories</option>
             <option value="uncategorized">Uncategorized</option>
             {mappedOptions}

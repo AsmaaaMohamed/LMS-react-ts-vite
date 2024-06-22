@@ -28,7 +28,7 @@ header .navbar-nav {
 }
 .left-nav select {
   width: 185px;
-  border: unset;
+  border: unset !important;
   background-color: transparent;
 }
 .form-select.select-cat:focus,

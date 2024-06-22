@@ -12,10 +12,6 @@ const CoursesPage = () => {
       <CustomFilter />
       <div className="course-section padding-tb section-bg">
         <div className="container">
-          <div className="section-header text-center">
-            <span className="subtitle">Featured Courses</span>
-            <h2 className="title">Pick A Course To Get Started</h2>
-          </div>
           <div className="section-wrapper">
             <div className="course-showing-part">
               <div className="d-flex flex-wrap align-items-center justify-content-between">
