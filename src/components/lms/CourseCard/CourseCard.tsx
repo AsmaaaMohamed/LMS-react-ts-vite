@@ -1,16 +1,16 @@
 import "./CourseCard.css";
 import { Link } from "react-router-dom";
 
-const CourseCard = () => {
+const CourseCard = ({title , instructor , price , img}) => {
   return (
     <div className="course-item">
       <div className="course-inner">
         <div className="course-thumb">
           <img
-            src="assets/images/course/08.jpg"
+            src={img}
             alt="course rajibraj91 rajibraj"
           />
-          <div className="course-price">$30</div>
+          <div className="course-price">${price}</div>
         </div>
         <div className="course-content">
           <div className="course-category">
@@ -29,7 +29,7 @@ const CourseCard = () => {
             </div>
           </div>
           <Link to="/course-details">
-            <h4>Certified Graphic Design with Free Project Course</h4>
+            <h4>{title}</h4>
           </Link>
           <div className="course-details">
             <div className="couse-count">
@@ -46,7 +46,7 @@ const CourseCard = () => {
                 alt="course author rajibraj91 rajibraj"
               />
               <a className="ca-name" href="/team-single">
-                Umme Nishat
+                {instructor}
               </a>
             </div>
             <div className="course-btn">

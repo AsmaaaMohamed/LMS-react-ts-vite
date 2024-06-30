@@ -23,6 +23,13 @@ const CoursesPage = () => {
       </option>
     );
   });
+  const renderedCourses = courses.map((c)=>{
+    return (
+      <div key={c.id} className="col">
+        <CourseCard {...c} />
+      </div>
+    );
+  });
   return (
     <Fragment>
       <PageHeader />
@@ -49,24 +56,7 @@ const CoursesPage = () => {
               </div>
             </div>
             <div className="row g-4 justify-content-center row-cols-lg-2 row-cols-1">
-              <div className="col">
-                <CourseCard />
-              </div>
-              <div className="col">
-                <CourseCard />
-              </div>
-              <div className="col">
-                <CourseCard />
-              </div>
-              <div className="col">
-                <CourseCard />
-              </div>
-              <div className="col">
-                <CourseCard />
-              </div>
-              <div className="col">
-                <CourseCard />
-              </div>
+              {renderedCourses}
             </div>
           </div>
         </div>

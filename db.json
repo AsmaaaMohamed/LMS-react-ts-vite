@@ -62,7 +62,7 @@
       "id": 1,
       "title": "Fundamentals of Adobe XD Theory Learn New",
       "category": "Computer Science",
-      "instructor": "Lora Smith",
+      "instructor": "William Smith",
       "price": 10,
       "img": "assets/images/course/01.jpg"
     },
@@ -70,7 +70,7 @@
       "id": 2,
       "title": "Certified Graphic Design with Free Project Course",
       "category": "Computer Science",
-      "instructor": "Lora Smith",
+      "instructor": "Umme Nishat",
       "price": 10,
       "img": "assets/images/course/02.jpg"
     },
@@ -78,7 +78,7 @@
       "id": 3,
       "title": "Theory Learn New Student And Fundamentals",
       "category": "Business Analysis",
-      "instructor": "Lora Smith",
+      "instructor": "Robot Smith",
       "price": 10,
       "img": "assets/images/course/03.jpg"
     },
@@ -86,7 +86,7 @@
       "id": 4,
       "title": "Computer Fundamentals Basic Startup Ultricies Vitae",
       "category": "Business Analysis",
-      "instructor": "Lora Smith",
+      "instructor": "Zinat Zaara",
       "price": 10,
       "img": "assets/images/course/04.jpg"
     },
@@ -94,7 +94,7 @@
       "id": 5,
       "title": "Boozy Halloween Drinks for the Grown Eleifend Kuismod",
       "category": "Data Science Analytics",
-      "instructor": "Lora Smith",
+      "instructor": "Billy Rivera",
       "price": 10,
       "img": "assets/images/course/05.jpg"
     },
@@ -102,7 +102,7 @@
       "id": 6,
       "title": "Student Want to Learn About Science And Arts",
       "category": "Data Science Analytics",
-      "instructor": "Lora Smith",
+      "instructor": "Subrina Kabir",
       "price": 10,
       "img": "assets/images/course/06.jpg"
     },
@@ -110,7 +110,7 @@
       "id": 7,
       "title": "Fundamentals of Adobe XD Theory Learn New",
       "category": "Civil Engineering",
-      "instructor": "Lora Smith",
+      "instructor": "William Smith",
       "price": 10,
       "img": "assets/images/course/01.jpg"
     },
@@ -118,7 +118,7 @@
       "id": 8,
       "title": "Certified Graphic Design with Free Project Course",
       "category": "Civil Engineering",
-      "instructor": "Lora Smith",
+      "instructor": "Umme Nishat",
       "price": 10,
       "img": "assets/images/course/02.jpg"
     },
@@ -126,7 +126,7 @@
       "id": 9,
       "title": "Theory Learn New Student And Fundamentals",
       "category": "Learning Management",
-      "instructor": "Lora Smith",
+      "instructor": "Robot Smith",
       "price": 10,
       "img": "assets/images/course/03.jpg"
     },
@@ -134,7 +134,7 @@
       "id": 10,
       "title": "Computer Fundamentals Basic Startup Ultricies Vitae",
       "category": "Learning Management",
-      "instructor": "Lora Smith",
+      "instructor": "Zinat Zaara",
       "price": 10,
       "img": "assets/images/course/04.jpg"
     },
@@ -142,7 +142,7 @@
       "id": 11,
       "title": "Boozy Halloween Drinks for the Grown Eleifend Kuismod",
       "category": "Computer Engineering",
-      "instructor": "Lora Smith",
+      "instructor": "Billy Rivera",
       "price": 10,
       "img": "assets/images/course/05.jpg"
     },
@@ -150,7 +150,7 @@
       "id": 12,
       "title": "Student Want to Learn About Science And Arts",
       "category": "Computer Engineering",
-      "instructor": "Lora Smith",
+      "instructor": "Subrina Kabir",
       "price": 10,
       "img": "assets/images/course/06.jpg"
     },
@@ -158,7 +158,7 @@
       "id": 13,
       "title": "Fundamentals of Adobe XD Theory Learn New",
       "category": "Design Architect",
-      "instructor": "Lora Smith",
+      "instructor": "William Smith",
       "price": 10,
       "img": "assets/images/course/01.jpg"
     },
@@ -166,7 +166,7 @@
       "id": 14,
       "title": "Certified Graphic Design with Free Project Course",
       "category": "Design Architect",
-      "instructor": "Lora Smith",
+      "instructor": "Umme Nishat",
       "price": 10,
       "img": "assets/images/course/02.jpg"
     },
@@ -174,7 +174,7 @@
       "id": 15,
       "title": "Theory Learn New Student And Fundamentals",
       "category": "Foreign Language",
-      "instructor": "Lora Smith",
+      "instructor": "Robot Smith",
       "price": 10,
       "img": "assets/images/course/03.jpg"
     },
@@ -182,7 +182,7 @@
       "id": 16,
       "title": "Computer Fundamentals Basic Startup Ultricies Vitae",
       "category": "Foreign Language",
-      "instructor": "Lora Smith",
+      "instructor": "Zinat Zaara",
       "price": 10,
       "img": "assets/images/course/04.jpg"
     },
@@ -190,7 +190,7 @@
       "id": 17,
       "title": "Boozy Halloween Drinks for the Grown Eleifend Kuismod",
       "category": "Foreign Language",
-      "instructor": "Lora Smith",
+      "instructor": "Billy Rivera",
       "price": 10,
       "img": "assets/images/course/05.jpg"
     },
@@ -198,7 +198,7 @@
       "id": 18,
       "title": "Student Want to Learn About Science And Arts",
       "category": "Computer Science",
-      "instructor": "Lora Smith",
+      "instructor": "Subrina Kabir",
       "price": 10,
       "img": "assets/images/course/06.jpg"
     }

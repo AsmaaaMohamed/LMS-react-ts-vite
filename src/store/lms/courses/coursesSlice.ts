@@ -4,12 +4,12 @@ import TLoading from "@customTypes/shared";
 import TCourse from "@customTypes/course";
 
 interface ICoursesState{
-    records:TCourse[];
+    courses:TCourse[];
     loading: TLoading;
     error: string | null;
 }
 const initialState:ICoursesState = {
-    records:[],
+    courses:[],
     loading:"idle",
     error:null,
 };
@@ -24,7 +24,7 @@ const coursesSlice = createSlice({
         })
         .addCase(actGetCourses.fulfilled , (state,action)=>{
             state.loading = "succeeded";
-            state.records = action.payload;
+            state.courses = action.payload;
         })
         .addCase(actGetCourses.rejected , (state,action)=>{
             state.loading ="failed";

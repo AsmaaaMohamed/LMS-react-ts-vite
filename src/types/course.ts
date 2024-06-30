@@ -1,7 +1,7 @@
 type TCourse = {
   id?: number;
   title: string;
-  category: string;
+  category?: string;
   instructor:string;
   price: string;
   img: string;
