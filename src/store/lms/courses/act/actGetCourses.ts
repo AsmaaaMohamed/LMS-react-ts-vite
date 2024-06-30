@@ -1,12 +1,12 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
-import TCategory from "@customTypes/category";
 import axios from "axios";
+import TCourse from "@customTypes/course";
 
-type TResponse = TCategory[];
-const actGetCategories = createAsyncThunk("categories/actGetCategories" , async(_, thunkAPI)=>{
+type TResponse = TCourse[];
+const actGetCourses = createAsyncThunk("courses/actGetcourses" , async(_, thunkAPI)=>{
     const{rejectWithValue} = thunkAPI;
     try {
-        const response = await axios.get<TResponse>("http://localhost:3005/coursesCategories");
+        const response = await axios.get<TResponse>("http://localhost:3005/courses");
         return response.data;
     } catch (error) {
         if (axios.isAxiosError(error))
@@ -15,4 +15,4 @@ const actGetCategories = createAsyncThunk("categories/actGetCategories" , async(
             return rejectWithValue("An unexpected error");
     }
 });
-export default actGetCategories;
+export default actGetCourses;

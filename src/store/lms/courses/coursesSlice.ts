@@ -1,36 +1,36 @@
 import { createSlice } from "@reduxjs/toolkit";
-import actGetCategories from "./act/actGetCategories";
+import actGetCourses from "./act/actGetCourses";
 import TLoading from "@customTypes/shared";
-import TCategory from "@customTypes/category";
+import TCourse from "@customTypes/course";
 
-interface ICategoriesState{
-    records:TCategory[];
+interface ICoursesState{
+    records:TCourse[];
     loading: TLoading;
     error: string | null;
 }
-const initialState:ICategoriesState = {
+const initialState:ICoursesState = {
     records:[],
     loading:"idle",
     error:null,
 };
-const categoriesSlice = createSlice({
-    name:"categories",
+const coursesSlice = createSlice({
+    name:"courses",
     initialState,
     reducers:{},
     extraReducers:(builder) => {
-        builder.addCase(actGetCategories.pending , (state)=>{
+        builder.addCase(actGetCourses.pending , (state)=>{
             state.loading = "pending";
             state.error = null;
         })
-        .addCase(actGetCategories.fulfilled , (state,action)=>{
+        .addCase(actGetCourses.fulfilled , (state,action)=>{
             state.loading = "succeeded";
             state.records = action.payload;
         })
-        .addCase(actGetCategories.rejected , (state,action)=>{
+        .addCase(actGetCourses.rejected , (state,action)=>{
             state.loading ="failed";
             if(action.payload && typeof action.payload === "string")
                 state.error = action.payload;
         })
     }
 });
-export default categoriesSlice.reducer;
+export default coursesSlice.reducer;

@@ -6,12 +6,14 @@ import { Form } from "react-bootstrap";
 import "./CoursesPage.css";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
+import actGetCourses from "@store/lms/courses/act/actGetCourses";
 
 const CoursesPage = () => {
   const dispatch = useAppDispatch();
   const { records } = useAppSelector((state) => state.coursesCategories);
   useEffect(() => {
     dispatch(actGetCoursesCategories());
+    dispatch(actGetCourses());
   }, [dispatch]);
   const mappedOptions = records.map((record) => {
     return (
