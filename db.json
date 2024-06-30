@@ -9,129 +9,198 @@
   ],
   "coursesCategories": [
     {
-      "id": "1",
-      "title":"Development",
-      "prefix":"development",
-      "icon":"assets/images/category/icon/07.jpg",
-      "img":"/public/assets/images/media/01.a6ef2cb5c25e0b206db0.jpg"
-    },
-    
-    {
-      "id": "2",
-      "title":"Finance & Accounting",
-      "prefix":"finance-accounting",
-      "icon":"assets/images/category/icon/08.jpg",
-      "img":"/public/assets/images/media/02.eb741159279892f8ac01.jpg"
+      "id": 1,
+      "title": "Computer Science",
+      "icon": "assets/images/category/icon/07.jpg",
+      "img": "/public/assets/images/media/01.a6ef2cb5c25e0b206db0.jpg"
     },
     {
-      "id": "3",
-      "title":"Business",
-      "prefix":"business",
-      "icon":"assets/images/category/icon/09.jpg",
-      "img":"/public/assets/images/media/03.34696d6919f4443f90d9.jpg"
+      "id": 2,
+      "title": "Civil Engineering",
+      "icon": "assets/images/category/icon/08.jpg",
+      "img": "/public/assets/images/media/02.eb741159279892f8ac01.jpg"
     },
     {
-      "id": "4",
-      "title":"IT & Software",
-      "prefix":"it-software",
-      "icon":"assets/images/category/icon/10.jpg",
-      "img":"/public/assets/images/media/04.e5146868eda891b1d61a.jpg"
+      "id": 3,
+      "title": "Business Analysis",
+      "icon": "assets/images/category/icon/09.jpg",
+      "img": "/public/assets/images/media/03.34696d6919f4443f90d9.jpg"
     },
     {
-      "id": "5",
-      "title":"Digital Marketing",
-      "prefix":"digital-marketing",
-      "icon":"assets/images/category/icon/11.jpg",
-      "img":"/public/assets/images/media/05.941b541a3b3cc7e83949.jpg"
+      "id": 4,
+      "title": "Data Science Analytics",
+      "icon": "assets/images/category/icon/10.jpg",
+      "img": "/public/assets/images/media/04.e5146868eda891b1d61a.jpg"
     },
     {
-      "id": "6",
-      "title":"Health & Fitness",
-      "prefix":"health-fitness",
-      "icon":"assets/images/category/icon/12.jpg",
-      "img":"/public/assets/images/media/06.c75e516aa2e0da953e88.jpg"
+      "id": 5,
+      "title": "Learning Management",
+      "icon": "assets/images/category/icon/11.jpg",
+      "img": "/public/assets/images/media/05.941b541a3b3cc7e83949.jpg"
     },
     {
-      "id": "7",
-      "title":"Design",
-      "prefix":"design",
-      "icon":"assets/images/category/icon/13.jpg",
-      "img":"/public/assets/images/media/07.29e9f04bc959a5e6f191.jpg"
+      "id": 6,
+      "title": "Computer Engineering",
+      "icon": "assets/images/category/icon/12.jpg",
+      "img": "/public/assets/images/media/06.c75e516aa2e0da953e88.jpg"
     },
     {
-      "id": "8",
-      "title":"Foreign Language",
-      "prefix":"foriegn-language",
-      "icon":"assets/images/category/icon/14.jpg",
-      "img":"/public/assets/images/media/08.dc3eb847cf659df917ff.jpg"
+      "id": 7,
+      "title": "Design Architect",
+      "icon": "assets/images/category/icon/13.jpg",
+      "img": "/public/assets/images/media/07.29e9f04bc959a5e6f191.jpg"
+    },
+    {
+      "id": 8,
+      "title": "Foreign Language",
+      "icon": "assets/images/category/icon/14.jpg",
+      "img": "/public/assets/images/media/08.dc3eb847cf659df917ff.jpg"
     }
   ],
   "courses": [
     {
-    "id": "1",
-    "title":"Fundamentals of Adobe XD Theory Learn New",
-    "category":"Development",
-    "instructor":"William Smith",
-    "price":27,
-    "img":"assets/images/course/01.jpg"
+      "id": 1,
+      "title": "Fundamentals of Adobe XD Theory Learn New",
+      "category": "Computer Science",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/01.jpg"
     },
     {
-    "id": "2",
-    "title":"Certified Graphic Design with Free Project Course",
-    "category":"Development",
-    "instructor":"Lora Smith",
-    "price":19,
-    "img":"assets/images/course/02.jpg"
+      "id": 2,
+      "title": "Certified Graphic Design with Free Project Course",
+      "category": "Computer Science",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/02.jpg"
     },
     {
-    "id": "3",
-    "title":"Theory Learn New Student And Fundamentals",
-    "category":"Development",
-    "instructor":"Robot Smith",
-    "price":30,
-    "img":"assets/images/course/03.jpg"
+      "id": 3,
+      "title": "Theory Learn New Student And Fundamentals",
+      "category": "Business Analysis",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/03.jpg"
     },
     {
-    "id": "4",
-    "title":"Computer Fundamentals Basic Startup Ultricies Vitae",
-    "category":"Development",
-    "instructor":"Zinat Zaara",
-    "price":25,
-    "img":"assets/images/course/04.jpg"
+      "id": 4,
+      "title": "Computer Fundamentals Basic Startup Ultricies Vitae",
+      "category": "Business Analysis",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/04.jpg"
     },
     {
-    "id": "5",
-    "title":"Boozy Halloween Drinks for the Grown Eleifend Kuismod",
-    "category":"Development",
-    "instructor":"Rajib Raj",
-    "price":40,
-    "img":"assets/images/course/05.jpg"
+      "id": 5,
+      "title": "Boozy Halloween Drinks for the Grown Eleifend Kuismod",
+      "category": "Data Science Analytics",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/05.jpg"
     },
     {
-    "id": "6",
-    "title":"Student Want to Learn About Science And Arts",
-    "category":"Development",
-    "instructor":"Angel Mili",
-    "price":35,
-    "img":"assets/images/course/06.jpg"
-    }
-  ],
-  "productsCategories": [
-    {
-    "id": "1",
-    "title":"Tshirts"
+      "id": 6,
+      "title": "Student Want to Learn About Science And Arts",
+      "category": "Data Science Analytics",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/06.jpg"
     },
     {
-    "id": "2",
-    "title":"Shoeses"
+      "id": 7,
+      "title": "Fundamentals of Adobe XD Theory Learn New",
+      "category": "Civil Engineering",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/01.jpg"
     },
     {
-    "id": "3",
-    "title":"Glasses"
+      "id": 8,
+      "title": "Certified Graphic Design with Free Project Course",
+      "category": "Civil Engineering",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/02.jpg"
     },
     {
-    "id": "4",
-    "title":"Pants"
+      "id": 9,
+      "title": "Theory Learn New Student And Fundamentals",
+      "category": "Learning Management",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/03.jpg"
+    },
+    {
+      "id": 10,
+      "title": "Computer Fundamentals Basic Startup Ultricies Vitae",
+      "category": "Learning Management",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/04.jpg"
+    },
+    {
+      "id": 11,
+      "title": "Boozy Halloween Drinks for the Grown Eleifend Kuismod",
+      "category": "Computer Engineering",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/05.jpg"
+    },
+    {
+      "id": 12,
+      "title": "Student Want to Learn About Science And Arts",
+      "category": "Computer Engineering",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/06.jpg"
+    },
+    {
+      "id": 13,
+      "title": "Fundamentals of Adobe XD Theory Learn New",
+      "category": "Design Architect",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/01.jpg"
+    },
+    {
+      "id": 14,
+      "title": "Certified Graphic Design with Free Project Course",
+      "category": "Design Architect",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/02.jpg"
+    },
+    {
+      "id": 15,
+      "title": "Theory Learn New Student And Fundamentals",
+      "category": "Foreign Language",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/03.jpg"
+    },
+    {
+      "id": 16,
+      "title": "Computer Fundamentals Basic Startup Ultricies Vitae",
+      "category": "Foreign Language",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/04.jpg"
+    },
+    {
+      "id": 17,
+      "title": "Boozy Halloween Drinks for the Grown Eleifend Kuismod",
+      "category": "Foreign Language",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/05.jpg"
+    },
+    {
+      "id": 18,
+      "title": "Student Want to Learn About Science And Arts",
+      "category": "Computer Science",
+      "instructor": "Lora Smith",
+      "price": 10,
+      "img": "assets/images/course/06.jpg"
     }
   ]
 }

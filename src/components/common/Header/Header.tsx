@@ -9,13 +9,15 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { InputGroup } from "react-bootstrap";
 import "./Header.css";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { useEffect, useState } from "react";
+import { useEffect, useContext } from "react";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
+import { SearchCategoryContext } from "@store/context/searchCategoryContext";
 
 const Header = () => {
   const dispatch = useAppDispatch();
   const {records} = useAppSelector(state=> state.coursesCategories);
-  const [categorySearch , setCategorySearch] = useState("");
+  const navigate = useNavigate();
+  const { selectedCategory, setSelectedCategory } = useContext(SearchCategoryContext);
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
   },[dispatch]);
@@ -25,7 +27,7 @@ const Header = () => {
     );
   });
   const navClass = "";
-  const navigate = useNavigate();
+  
   const loginClickHandle = () => {
     navigate("/login");
   };
@@ -33,8 +35,8 @@ const Header = () => {
     navigate("/signup");
   };
   const handleCategorySelect = (e)=>{
-    setCategorySearch(e.target.value);
-    console.log(e.target.value)
+    setSelectedCategory(e.target.value);
+    navigate("/courses");
   }
   return (
     <header className={navClass}>
@@ -43,7 +45,7 @@ const Header = () => {
           <img src={Logo} height="52" />
         </Navbar.Brand>
         <Nav className="left-nav d-none d-xxl-flex">
-          <Form.Select aria-label="Default select example" className="select-cat" value={categorySearch} onChange={(e)=>handleCategorySelect(e)}>
+          <Form.Select aria-label="Default select example" className="select-cat" value={selectedCategory} onChange={(e)=>handleCategorySelect(e)}>
             <option value="all">All Categories</option>
             <option value="uncategorized">Uncategorized</option>
             {mappedOptions}

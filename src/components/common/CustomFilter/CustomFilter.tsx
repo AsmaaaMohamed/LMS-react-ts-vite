@@ -1,8 +1,10 @@
 // import { useEffect, useState } from "react";
 import { Form } from "react-bootstrap";
 import "./CustomFilter.css";
+import { useContext } from "react";
+import { SearchCategoryContext } from "@store/context/searchCategoryContext";
 
-const CustomFilter = () => {
+const CustomFilter = ({categoriesOptions}) => {
   // const[filteredCourses , setFilteredCourses] = useState([]);
   // useEffect(()=>{
   //     const courses = [
@@ -13,6 +15,7 @@ const CustomFilter = () => {
   //         {name:'Bum' , age:'30' , prof:'Bow'},
   //     ]
   // },[]);
+  const { selectedCategory, setSelectedCategory } = useContext(SearchCategoryContext);
   return (
     <div className="group-select-section">
       <div className="container">
@@ -29,11 +32,13 @@ const CustomFilter = () => {
                 <div className="row g-2 row-cols-lg-4 row-cols-sm-2 row-cols-1">
                   <div className="col">
                     <div className="select-item">
-                      <Form.Select aria-label="Default select example">
+                      <Form.Select
+                        aria-label="Default select example"
+                        value={selectedCategory ? selectedCategory : "all"}
+                      >
                         <option value="all">All Categories</option>
-                        <option value="uncategories">Uncategories</option>
-                        <option value="academy">Academy</option>
-                        <option value="agency">Agency</option>
+                        <option value="uncategorized">Uncategorized</option>
+                        {categoriesOptions}
                       </Form.Select>
                     </div>
                   </div>
