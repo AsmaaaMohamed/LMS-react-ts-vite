@@ -1,9 +1,11 @@
 import { configureStore } from "@reduxjs/toolkit";
 import coursesCategoriesReducer from "@store/lms/categories/categoriesSlice";
+import coursesReducer from "@store/lms/courses/coursesSlice";
 
 export const store = configureStore({
   reducer: {
-    coursesCategories: coursesCategoriesReducer
+    coursesCategories: coursesCategoriesReducer,
+    courses: coursesReducer
   },
 });
 

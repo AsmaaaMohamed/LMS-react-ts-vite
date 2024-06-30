@@ -11,6 +11,7 @@ import actGetCourses from "@store/lms/courses/act/actGetCourses";
 const CoursesPage = () => {
   const dispatch = useAppDispatch();
   const { records } = useAppSelector((state) => state.coursesCategories);
+  const { courses } = useAppSelector((state) => state.courses);
   useEffect(() => {
     dispatch(actGetCoursesCategories());
     dispatch(actGetCourses());
