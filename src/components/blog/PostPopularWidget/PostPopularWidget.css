@@ -12,3 +12,18 @@
     line-height: 1.2;
     transition: all .3s ease;
 }
+.widget.widget-post ul.widget-wrapper li .post-thumb {
+    height: 80px;
+    width: 90px;
+}
+.widget.widget-post ul.widget-wrapper li .post-content {
+    width: calc(100% - 110px);
+}
+.widget-post .widget-wrapper li {
+    border-bottom: 1px solid #ecf0f3;
+    list-style: none;
+    padding: 15px 25px;
+}
+.widget-post .widget-wrapper li img{
+    height: 100%;
+}

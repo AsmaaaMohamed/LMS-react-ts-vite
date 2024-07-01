@@ -12,3 +12,6 @@
     line-height: 1.2;
     transition: all .3s ease;
 }
+.widget.widget-archive .widget-wrapper li a, .widget.widget-category .widget-wrapper li a {
+    padding: 15px 25px;
+}

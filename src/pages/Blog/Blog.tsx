@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { PageHeader } from "@components/common";
 import { PostCard } from "@components/blog";
 import { SearchWidget } from "@components/common";
@@ -7,8 +7,22 @@ import PostPopularWidget from "@components/blog/PostPopularWidget/PostPopularWid
 import ArchiveWidget from "@components/blog/ArchiveWidget/ArchiveWidget";
 import GalleryWidget from "@components/blog/GalleryWidget/GalleryWidget";
 import PopularTagWidget from "@components/blog/Tag/PopularTagWidget";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
+import actGetPosts from "@store/blog/posts/act/actGetPosts";
 
 const Blog = () => {
+  const dispatch = useAppDispatch();
+  const { posts } = useAppSelector((state) => state.posts);
+   useEffect(() => {
+     dispatch(actGetPosts());
+   }, [dispatch]);
+   const renderedPosts = posts.slice(0, 8).map((p) => {
+     return (
+       <div key={p.id} className="col">
+         <PostCard {...p} />
+       </div>
+     );
+   });
   return (
     <Fragment>
       <PageHeader />
@@ -19,30 +33,7 @@ const Blog = () => {
               <article>
                 <div className="section-wrapper">
                   <div className="row row-cols-1 row-cols-sm-2 row-cols-md-2 justify-content-center g-4">
-                    <div className="col">
-                      <PostCard />
-                    </div>
-                    <div className="col">
-                      <PostCard />
-                    </div>
-                    <div className="col">
-                      <PostCard />
-                    </div>
-                    <div className="col">
-                      <PostCard />
-                    </div>
-                    <div className="col">
-                      <PostCard />
-                    </div>
-                    <div className="col">
-                      <PostCard />
-                    </div>
-                    <div className="col">
-                      <PostCard />
-                    </div>
-                    <div className="col">
-                      <PostCard />
-                    </div>
+                    {renderedPosts}
                   </div>
                   {/* <ul className="default-pagination lab-ul">
                     <li><a href="#"><i className="icofont-rounded-left"></i></a></li>

@@ -100,7 +100,6 @@ textarea {
 }
 .widget {
   box-shadow: 0 0 10px hsla(0, 0%, 53%, 0.1);
-  padding: 25px;
   background-color: #fff;
   margin-bottom: 30px;
 }
@@ -114,7 +113,6 @@ textarea {
 .widget .widget-wrapper li {
   border-bottom: 1px solid #ecf0f3;
   list-style: none;
-  padding: 15px 25px;
 }
 .video-button {
   padding: 0;

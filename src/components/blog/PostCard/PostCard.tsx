@@ -1,34 +1,33 @@
 import "./PostCard.css";
 
-const PostCard = () => {
+const PostCard = ({title,author, publish_date,post_desc, comments_count,url,img}) => {
   return (
     <div className="post-item">
       <div className="post-inner">
         <div className="post-thumb">
           <a href="/blog-single">
             <img
-              src="assets/images/blog/01.jpg"
+              src={img}
               alt="blog thumb rajibraj91 rajibraj"
             />
           </a>
         </div>
         <div className="post-content">
           <a href="/blog-single">
-            <h4>Scottish Creatives To Receive Funded Business.</h4>
+            <h4>{title}</h4>
           </a>
           <div className="meta-post">
             <ul className="lab-ul">
               <li>
-                <i className="icofont-ui-user icofont"></i>Begrass Tyson
+                <i className="icofont-ui-user icofont"></i>{author}
               </li>
               <li>
-                <i className="icofont-calendar icofont"></i>April 23,2022
+                <i className="icofont-calendar icofont"></i>{publish_date}
               </li>
             </ul>
           </div>
           <p>
-            Pluoresnts customize prancing apcentered customer service anding
-            ands asing straelg Interacvely cordinate performe
+            {post_desc}
           </p>
         </div>
         <div className="post-footer">
@@ -39,7 +38,7 @@ const PostCard = () => {
           </div>
           <div className="pf-right">
             <i className="icofont-comment icofont"></i>
-            <span className="comment-count text-center">3</span>
+            <span className="comment-count text-center">{comments_count}</span>
           </div>
         </div>
       </div>

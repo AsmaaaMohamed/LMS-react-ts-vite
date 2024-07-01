@@ -1,8 +1,4 @@
 {
-  "posts": [
-    { "id": "1", "title": "a title", "views": 100 },
-    { "id": "2", "title": "another title", "views": 200 }
-  ],
   "comments": [
     { "id": "1", "text": "a comment about post 1", "postId": "1" },
     { "id": "2", "text": "another comment about post 1", "postId": "1" }
@@ -201,6 +197,98 @@
       "instructor": "Subrina Kabir",
       "price": 10,
       "img": "assets/images/course/06.jpg"
+    }
+  ],
+  "posts": [
+    {
+      "id": 1,
+      "title": "Business Ueporting Rouncil Them Could Plan.",
+      "author": "Rajib Raj",
+      "publish_date": "Jun 05,2022",
+      "post_desc": "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
+      "comments_count": 3,
+      "img": "assets/images/blog/01.jpg",
+      "url": "/blog-single"
+    },
+    {
+      "id": 2,
+      "title": "Financial Reporting Qouncil What Could More.",
+      "author": "Rajib Raj",
+      "publish_date": "Jun 05,2022",
+      "post_desc": "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
+      "comments_count": 3,
+      "img": "assets/images/blog/02.jpg",
+      "url": "/blog-single"
+    },
+    {
+      "id": 3,
+      "title": "Consulting Reporting Qounc Arei Could More.",
+      "author": "Rajib Raj",
+      "publish_date": "Jun 05,2022",
+      "post_desc": "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
+      "comments_count": 3,
+      "img": "assets/images/blog/03.jpg",
+      "url": "/blog-single"
+    },
+    {
+      "id": 4,
+      "title": "Strategic Social Media and of visual design.",
+      "author": "Rajib Raj",
+      "publish_date": "Jun 05,2022",
+      "post_desc": "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
+      "comments_count": 3,
+      "img": "assets/images/blog/04.jpg",
+      "url": "/blog-single"
+    },
+    {
+      "id": 5,
+      "title": "Find the Right Path for your Group Course online.",
+      "author": "Rajib Raj",
+      "publish_date": "Jun 05,2022",
+      "post_desc": "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
+      "comments_count": 3,
+      "img": "assets/images/blog/05.jpg",
+      "url": "/blog-single"
+    },
+    {
+      "id": 6,
+      "title": "Learn by doing with Real World Projects other countries.",
+      "author": "Rajib Raj",
+      "publish_date": "Jun 05,2022",
+      "post_desc": "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
+      "comments_count": 3,
+      "img": "assets/images/blog/06.jpg",
+      "url": "/blog-single"
+    },
+    {
+      "id": 7,
+      "title": "The Importance Of Intrinsic for Students.",
+      "author": "Rajib Raj",
+      "publish_date": "Jun 05,2022",
+      "post_desc": "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
+      "comments_count": 3,
+      "img": "assets/images/blog/07.jpg",
+      "url": "/blog-single"
+    },
+    {
+      "id": 8,
+      "title": "A Better Alternative To Grading Student Writing.",
+      "author": "Rajib Raj",
+      "publish_date": "Jun 05,2022",
+      "post_desc": "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
+      "comments_count": 3,
+      "img": "assets/images/blog/08.jpg",
+      "url": "/blog-single"
+    },
+    {
+      "id": 9,
+      "title": "The Challenge Global Learning In Public Education.",
+      "author": "Rajib Raj",
+      "publish_date": "Jun 05,2022",
+      "post_desc": "Pluoresnts customize prancing apcentered customer service anding ands asing straelg Interacvely cordinate performe",
+      "comments_count": 3,
+      "img": "assets/images/blog/09.jpg",
+      "url": "/blog-single"
     }
   ]
 }

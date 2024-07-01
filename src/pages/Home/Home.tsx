@@ -13,14 +13,17 @@ import { Fragment, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 import actGetCourses from "@store/lms/courses/act/actGetCourses";
+import actGetPosts from "@store/blog/posts/act/actGetPosts";
 
 const Home = () => {
   const dispatch = useAppDispatch();
   const {records} = useAppSelector(state=> state.coursesCategories);
   const { courses } = useAppSelector((state) => state.courses);
+  const {posts} = useAppSelector((state)=> state.posts);
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
     dispatch(actGetCourses());
+    dispatch(actGetPosts());
   },[dispatch]);
   const mappedCategories = records.map((record)=>{
     return (
@@ -31,6 +34,13 @@ const Home = () => {
     return (
       <div key={c.id} className="col">
         <CourseCard {...c} />
+      </div>
+    );
+  });
+  const renderedPosts = posts.slice(0, 3).map((p) => {
+    return (
+      <div key={p.id} className="col">
+        <PostCard {...p}/>
       </div>
     );
   });
@@ -442,15 +452,7 @@ const Home = () => {
           </div>
           <div className="section-wrapper">
             <div className="row row-cols-1 row-cols-md-2 row-cols-xl-3 justify-content-center g-4">
-              <div className="col">
-                <PostCard />
-              </div>
-              <div className="col">
-                <PostCard />
-              </div>
-              <div className="col">
-                <PostCard />
-              </div>
+              {renderedPosts}
             </div>
           </div>
         </div>
