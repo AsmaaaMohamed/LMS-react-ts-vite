@@ -17,7 +17,7 @@ const PopularCategory = ({title, icon, img}: TPopularCategoryProps) => {
             />
           </div>
           <div className="category-content">
-            <a href="/">
+            <a href="/courses">
               <h6>{title}</h6>
             </a>
             <span>24 Course</span>

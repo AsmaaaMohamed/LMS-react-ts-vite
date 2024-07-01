@@ -22,3 +22,6 @@
     -webkit-transform: translateY(-50%) rotate(0deg);
     transform: translateY(-50%) rotate(0deg);
 }
+.widget.shop-widget .widget-wrapper li {
+    padding: 15px 25px;
+}
