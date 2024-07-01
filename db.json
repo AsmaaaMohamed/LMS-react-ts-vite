@@ -60,7 +60,7 @@
       "category": "Computer Science",
       "instructor": "William Smith",
       "price": 10,
-      "img": "assets/images/course/01.jpg"
+      "img": "assets/images/course/07.jpg"
     },
     {
       "id": 2,
@@ -68,7 +68,7 @@
       "category": "Computer Science",
       "instructor": "Umme Nishat",
       "price": 10,
-      "img": "assets/images/course/02.jpg"
+      "img": "assets/images/course/08.jpg"
     },
     {
       "id": 3,
@@ -76,7 +76,7 @@
       "category": "Business Analysis",
       "instructor": "Robot Smith",
       "price": 10,
-      "img": "assets/images/course/03.jpg"
+      "img": "assets/images/course/09.jpg"
     },
     {
       "id": 4,
@@ -84,7 +84,7 @@
       "category": "Business Analysis",
       "instructor": "Zinat Zaara",
       "price": 10,
-      "img": "assets/images/course/04.jpg"
+      "img": "assets/images/course/10.jpg"
     },
     {
       "id": 5,
@@ -92,7 +92,7 @@
       "category": "Data Science Analytics",
       "instructor": "Billy Rivera",
       "price": 10,
-      "img": "assets/images/course/05.jpg"
+      "img": "assets/images/course/11.jpg"
     },
     {
       "id": 6,
@@ -100,7 +100,7 @@
       "category": "Data Science Analytics",
       "instructor": "Subrina Kabir",
       "price": 10,
-      "img": "assets/images/course/06.jpg"
+      "img": "assets/images/course/12.jpg"
     },
     {
       "id": 7,
@@ -108,7 +108,7 @@
       "category": "Civil Engineering",
       "instructor": "William Smith",
       "price": 10,
-      "img": "assets/images/course/01.jpg"
+      "img": "assets/images/course/07.jpg"
     },
     {
       "id": 8,
@@ -116,7 +116,7 @@
       "category": "Civil Engineering",
       "instructor": "Umme Nishat",
       "price": 10,
-      "img": "assets/images/course/02.jpg"
+      "img": "assets/images/course/08.jpg"
     },
     {
       "id": 9,
@@ -124,7 +124,7 @@
       "category": "Learning Management",
       "instructor": "Robot Smith",
       "price": 10,
-      "img": "assets/images/course/03.jpg"
+      "img": "assets/images/course/09.jpg"
     },
     {
       "id": 10,
@@ -132,7 +132,7 @@
       "category": "Learning Management",
       "instructor": "Zinat Zaara",
       "price": 10,
-      "img": "assets/images/course/04.jpg"
+      "img": "assets/images/course/10.jpg"
     },
     {
       "id": 11,
@@ -140,7 +140,7 @@
       "category": "Computer Engineering",
       "instructor": "Billy Rivera",
       "price": 10,
-      "img": "assets/images/course/05.jpg"
+      "img": "assets/images/course/11.jpg"
     },
     {
       "id": 12,
@@ -148,7 +148,7 @@
       "category": "Computer Engineering",
       "instructor": "Subrina Kabir",
       "price": 10,
-      "img": "assets/images/course/06.jpg"
+      "img": "assets/images/course/12.jpg"
     },
     {
       "id": 13,
@@ -156,7 +156,7 @@
       "category": "Design Architect",
       "instructor": "William Smith",
       "price": 10,
-      "img": "assets/images/course/01.jpg"
+      "img": "assets/images/course/07.jpg"
     },
     {
       "id": 14,
@@ -164,7 +164,7 @@
       "category": "Design Architect",
       "instructor": "Umme Nishat",
       "price": 10,
-      "img": "assets/images/course/02.jpg"
+      "img": "assets/images/course/08.jpg"
     },
     {
       "id": 15,
@@ -172,7 +172,7 @@
       "category": "Foreign Language",
       "instructor": "Robot Smith",
       "price": 10,
-      "img": "assets/images/course/03.jpg"
+      "img": "assets/images/course/09.jpg"
     },
     {
       "id": 16,
@@ -180,7 +180,7 @@
       "category": "Foreign Language",
       "instructor": "Zinat Zaara",
       "price": 10,
-      "img": "assets/images/course/04.jpg"
+      "img": "assets/images/course/10.jpg"
     },
     {
       "id": 17,
@@ -188,7 +188,7 @@
       "category": "Foreign Language",
       "instructor": "Billy Rivera",
       "price": 10,
-      "img": "assets/images/course/05.jpg"
+      "img": "assets/images/course/11.jpg"
     },
     {
       "id": 18,
@@ -196,7 +196,7 @@
       "category": "Computer Science",
       "instructor": "Subrina Kabir",
       "price": 10,
-      "img": "assets/images/course/06.jpg"
+      "img": "assets/images/course/12.jpg"
     }
   ],
   "posts": [
