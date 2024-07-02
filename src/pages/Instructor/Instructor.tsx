@@ -17,11 +17,11 @@ const Instructor = () => {
                                 <h4 className="title">Emilee Logan</h4>
                                 <p className="ins-dege">Master of Education Degree</p>
                                 <span className="ratting">
-                                    <i className="icofont-ui-rating"></i>
-                                    <i className="icofont-ui-rating"></i>
-                                    <i className="icofont-ui-rating"></i>
-                                    <i className="icofont-ui-rating"></i>
-                                    <i className="icofont-ui-rating"></i>
+                                    <i className="icofont-ui-rating icofont"></i>
+                                    <i className="icofont-ui-rating icofont"></i>
+                                    <i className="icofont-ui-rating icofont"></i>
+                                    <i className="icofont-ui-rating icofont"></i>
+                                    <i className="icofont-ui-rating icofont"></i>
                                 </span>
                                 <p className="ins-desc">Infrastruct ntrinsicl grow optimal talers rather than efectve nformaon Collabora optimize partnersh and frictionles deliverables</p>
                                 <h6 className="subtitle">Personal Statement</h6>
@@ -48,27 +48,27 @@ const Instructor = () => {
                                         <ul className="lab-ul list-attr d-flex flex-wrap justify-content-start">
                                             <li>
                                                 <a className="twitter" href="#">
-                                                    <i className="icofont-twitter"></i>
+                                                    <i className="icofont-twitter icofont"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a className="instagram" href="#">
-                                                    <i className="icofont-instagram"></i>
+                                                    <i className="icofont-instagram icofont"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a className="basketball" href="#">
-                                                    <i className="icofont-basketball"></i>
+                                                    <i className="icofont-basketball icofont"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a className="vimeo" href="#">
-                                                    <i className="icofont-vimeo"></i>
+                                                    <i className="icofont-vimeo icofont"></i>
                                                 </a>
                                             </li>
                                             <li>
                                                 <a className="behance" href="#">
-                                                    <i className="icofont-behance"></i>
+                                                    <i className="icofont-behance icofont"></i>
                                                 </a>
                                             </li>
                                         </ul>

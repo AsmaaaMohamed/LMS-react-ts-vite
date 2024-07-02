@@ -38,6 +38,36 @@
 .instructor-single-section .instructor-wrapper .instructor-single-bottom .subtitle {
     margin-bottom: 25px;
 }
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item {
+    align-items: flex-start;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-thumb img {
+    border: 8px solid #fff;
+    z-index: 1;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-thumb {
+    box-shadow: 0 2px 4px 3px rgba(83, 61, 82, .06);
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top:before {
+    border-bottom: 690px solid #26c976;
+    border-right: 648px solid transparent;
+    height: 100%;
+    left: 0;
+    top: 0;
+    width: 50%;
+}
+@media (min-width: 1200px) {
+    .instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-thumb {
+        margin-bottom: 0;
+        width: calc(50% - 25px);
+    }
+    .instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content {
+        width: calc(50% - 15px);
+    }
+    .instructor-single-section .instructor-wrapper .instructor-single-top:before {
+        display: block;
+    }
+}
 @media (min-width: 992px) {
     .instructor-single-section .instructor-wrapper .instructor-single-bottom .skill-item {
         margin-bottom: 0;
@@ -48,7 +78,8 @@
     .instructor-single-section .instructor-wrapper .instructor-single-bottom .skill-item:last-child {
         margin-right: 0;
     }
-    .instructor-single-section .instructor-wrapper .instructor-single-bottom {
+    .instructor-single-section .instructor-wrapper .instructor-single-bottom,
+    .instructor-single-section .instructor-wrapper .instructor-single-top {
         padding: 60px 50px;
     }
 }
