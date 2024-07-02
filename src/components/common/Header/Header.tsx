@@ -81,7 +81,7 @@ const Header = () => {
                 Blog
               </Nav.Link>
               <NavDropdown title="Pages" id="navbarScrollingDropdown">
-                <NavDropdown.Item as={Link} to="#action4">
+                <NavDropdown.Item as={Link} to="/instructor">
                   Instructor
                 </NavDropdown.Item>
                 <NavDropdown.Divider />
