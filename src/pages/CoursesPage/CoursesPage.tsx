@@ -13,12 +13,11 @@ const CoursesPage = () => {
   const dispatch = useAppDispatch();
   const { records } = useAppSelector((state) => state.coursesCategories);
   const { courses } = useAppSelector((state) => state.courses);
-  const {selectedCategory  } = useContext(SearchCategoryContext);
-  console.log(selectedCategory)
+  const {selectedCategory , selectedPrice } = useContext(SearchCategoryContext);
   useEffect(() => {
     dispatch(actGetCoursesCategories());
-    dispatch(actGetCourses(selectedCategory));
-  }, [dispatch,selectedCategory]);
+    dispatch(actGetCourses({category:selectedCategory , price:selectedPrice}));
+  }, [dispatch,selectedCategory,selectedPrice]);
   const mappedOptions = records.map((record) => {
     return (
       <option key={record.id} value={record.prefix}>

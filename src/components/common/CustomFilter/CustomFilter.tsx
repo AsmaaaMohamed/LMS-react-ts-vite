@@ -15,7 +15,7 @@ const CustomFilter = ({categoriesOptions}) => {
   //         {name:'Bum' , age:'30' , prof:'Bow'},
   //     ]
   // },[]);
-  const { selectedCategory, setSelectedCategory } = useContext(SearchCategoryContext);
+  const { selectedCategory, setSelectedCategory , selectedPrice , setSelectedPrice } = useContext(SearchCategoryContext);
   return (
     <div className="group-select-section">
       <div className="container">
@@ -37,8 +37,8 @@ const CustomFilter = ({categoriesOptions}) => {
                         value={selectedCategory ? selectedCategory : "All Categories"}
                         onChange={(e)=>setSelectedCategory(e.target.value)}
                       >
-                        <option value="all">All Categories</option>
-                        <option value="uncategorized">Uncategorized</option>
+                        <option>All Categories</option>
+                        <option>Uncategorized</option>
                         {categoriesOptions}
                       </Form.Select>
                     </div>
@@ -55,11 +55,14 @@ const CustomFilter = ({categoriesOptions}) => {
                   </div>
                   <div className="col">
                     <div className="select-item">
-                      <Form.Select aria-label="Default select example">
-                        <option value="all">All Prices</option>
-                        <option value="10">Java</option>
-                        <option value="20">PHP</option>
-                        <option value="25">HTML</option>
+                      <Form.Select
+                        aria-label="Default select example"
+                        value={selectedPrice ? selectedPrice : "All prices"}
+                        onChange={(e)=>setSelectedPrice(e.target.value)}>
+                        <option>All Prices</option>
+                        <option value="10">10</option>
+                        <option value="20">20</option>
+                        <option value="25">25</option>
                       </Form.Select>
                     </div>
                   </div>
