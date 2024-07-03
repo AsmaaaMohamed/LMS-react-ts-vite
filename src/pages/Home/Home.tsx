@@ -15,6 +15,7 @@ import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories"
 import actGetCourses from "@store/lms/courses/act/actGetCourses";
 import actGetPosts from "@store/blog/posts/act/actGetPosts";
 import actGetInstructors from "@store/lms/instructors/act/actGetInstructors";
+import actGetSkills from "@store/lms/skills/act/actGetSkills";
 
 const Home = () => {
   const dispatch = useAppDispatch();
@@ -22,11 +23,13 @@ const Home = () => {
   const { courses } = useAppSelector((state) => state.courses);
   const {posts} = useAppSelector((state)=> state.posts);
   const {instructors} = useAppSelector((state)=> state.instructors);
+  const{skills} = useAppSelector((state)=>state.skills);
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
     dispatch(actGetCourses());
     dispatch(actGetPosts());
     dispatch(actGetInstructors());
+    dispatch(actGetSkills());
   },[dispatch]);
   const mappedCategories = records.map((record)=>{
     return (
@@ -47,10 +50,17 @@ const Home = () => {
       </div>
     );
   });
-  const renderedInstructors = instructors.slice(0,4).map((i)=>{
+  const renderedInstructors = instructors.map((i)=>{
     return(
       <div key={i.id} className="col">
         <InstructorCard {...i} />
+      </div>
+    );
+  });
+  const renderedSkills = skills.map((s)=>{
+    return(
+      <div key={s.id} className="col">
+        <SkillCard {...s} />
       </div>
     );
   });
@@ -348,18 +358,7 @@ const Home = () => {
             <div className="col-lg-7 col-12">
               <div className="section-wrpper">
                 <div className="row g-4 justify-content-center row-cols-sm-2 row-cols-1">
-                  <div className="col">
-                    <SkillCard />
-                  </div>
-                  <div className="col">
-                    <SkillCard />
-                  </div>
-                  <div className="col">
-                    <SkillCard />
-                  </div>
-                  <div className="col">
-                    <SkillCard />
-                  </div>
+                  {renderedSkills}
                 </div>
               </div>
             </div>

@@ -1,18 +1,18 @@
 import "./SkillCard.css";
 
-const SkillCard = () => {
+const SkillCard = ({title , desc , icon}) => {
   return (
     <div className="skill-item">
       <div className="skill-inner">
         <div className="skill-thumb">
           <img
-            src="assets/images/skill/icon/01.jpg"
+            src={icon}
             alt="skill rajibraj91 rajibraj"
           />
         </div>
         <div className="skill-content">
-          <h5>Skilled Instructors</h5>
-          <p>You pick the schedule.</p>
+          <h5>{title}</h5>
+          <p>{desc}</p>
         </div>
       </div>
     </div>

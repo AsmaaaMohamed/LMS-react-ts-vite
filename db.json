@@ -225,6 +225,32 @@
       "img":"assets/images/instructor/04.jpg"
     }
   ],
+  "skills":[
+    {
+      "id":1,
+      "title":"Skilled Instructors",
+      "desc":"You pick the schedule.",
+      "icon":"assets/images/skill/icon/01.jpg"
+    },
+    {
+      "id":2,
+      "title":"Get Certificate",
+      "desc":"You pick the schedule.",
+      "icon":"assets/images/skill/icon/02.jpg"
+    },
+    {
+      "id":3,
+      "title":"Online Classes",
+      "desc":"You pick the schedule.",
+      "icon":"assets/images/skill/icon/03.jpg"
+    },
+    {
+      "id":4,
+      "title":"Educator Helps",
+      "desc":"You pick the schedule.",
+      "icon":"assets/images/skill/icon/04.jpg"
+    }
+  ],
   "posts": [
     {
       "id": 1,

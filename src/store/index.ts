@@ -3,13 +3,15 @@ import coursesCategoriesReducer from "@store/lms/categories/categoriesSlice";
 import coursesReducer from "@store/lms/courses/coursesSlice";
 import postsReducer from "@store/blog/posts/postsSlice";
 import instructorsReducer from "@store/lms/instructors/instructorsSlice";
+import skillsReducer from "@store/lms/skills/skillsSlice";
 
 export const store = configureStore({
   reducer: {
     coursesCategories: coursesCategoriesReducer,
     courses: coursesReducer,
     posts: postsReducer,
-    instructors: instructorsReducer
+    instructors: instructorsReducer,
+    skills: skillsReducer
   },
 });
 
