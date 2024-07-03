@@ -1,20 +1,20 @@
 import "./InstructorCard.css";
 
-const InstructorCard = () => {
+const InstructorCard = ({name, position , img}) => {
   return (
     <div className="instructor-item">
       <div className="instructor-inner">
         <div className="instructor-thumb">
           <img
-            src="assets/images/instructor/01.jpg"
+            src={img}
             alt="instructor rajibraj91 rajibraj"
           />
         </div>
         <div className="instructor-content">
           <a href="/team-single">
-            <h4>Emilee Logan</h4>
+            <h4>{name}</h4>
           </a>
-          <p>Master of Education Degree</p>
+          <p>{position}</p>
           <span className="ratting">
             <i className="icofont-ui-rating icofont"></i>
             <i className="icofont-ui-rating icofont"></i>

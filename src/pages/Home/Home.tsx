@@ -14,16 +14,19 @@ import { useAppDispatch, useAppSelector } from "@store/hooks";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 import actGetCourses from "@store/lms/courses/act/actGetCourses";
 import actGetPosts from "@store/blog/posts/act/actGetPosts";
+import actGetInstructors from "@store/lms/instructors/act/actGetInstructors";
 
 const Home = () => {
   const dispatch = useAppDispatch();
   const {records} = useAppSelector(state=> state.coursesCategories);
   const { courses } = useAppSelector((state) => state.courses);
   const {posts} = useAppSelector((state)=> state.posts);
+  const {instructors} = useAppSelector((state)=> state.instructors);
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
     dispatch(actGetCourses());
     dispatch(actGetPosts());
+    dispatch(actGetInstructors());
   },[dispatch]);
   const mappedCategories = records.map((record)=>{
     return (
@@ -41,6 +44,13 @@ const Home = () => {
     return (
       <div key={p.id} className="col">
         <PostCard {...p}/>
+      </div>
+    );
+  });
+  const renderedInstructors = instructors.slice(0,4).map((i)=>{
+    return(
+      <div key={i.id} className="col">
+        <InstructorCard {...i} />
       </div>
     );
   });
@@ -311,18 +321,7 @@ const Home = () => {
           </div>
           <div className="section-wrapper">
             <div className="row g-4 justify-content-center row-cols-1 row-cols-sm-2 row-cols-lg-3 row-cols-xl-4">
-              <div className="col">
-                <InstructorCard />
-              </div>
-              <div className="col">
-                <InstructorCard />
-              </div>
-              <div className="col">
-                <InstructorCard />
-              </div>
-              <div className="col">
-                <InstructorCard />
-              </div>
+              {renderedInstructors}
             </div>
             <div className="text-center footer-btn">
               <p>

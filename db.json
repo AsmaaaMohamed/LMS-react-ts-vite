@@ -202,33 +202,27 @@
   "instructors":[
     {
       "id":1,
-      "name":"William Smith",
-      "img":"assets/images/course/author/01.jpg"
+      "name":"Emilee Logan",
+      "position":"Master of Education Degree",
+      "img":"assets/images/instructor/01.jpg"
     },
     {
       "id":2,
-      "name":"Umme Nishat",
-      "img":"assets/images/course/author/02.jpg"
+      "name":"Donald Logan",
+      "position":"Master of Education Degree",
+      "img":"assets/images/instructor/02.jpg"
     },
     {
       "id":3,
-      "name":"Robot Smith",
-      "img":"assets/images/course/author/03.jpg"
+      "name":"Oliver Porter",
+      "position":"Master of Education Degree",
+      "img":"assets/images/instructor/03.jpg"
     },
     {
       "id":4,
-      "name":"Zinat Zaara",
-      "img":"assets/images/course/author/04.jpg"
-    },
-    {
-      "id":5,
-      "name":"Billy Rivera",
-      "img":"assets/images/course/author/05.jpg"
-    },
-    {
-      "id":6,
-      "name":"Subrina Kabir",
-      "img":"assets/images/course/author/06.jpg"
+      "name":"Nahla Jones",
+      "position":"Master of Education Degree",
+      "img":"assets/images/instructor/04.jpg"
     }
   ],
   "posts": [

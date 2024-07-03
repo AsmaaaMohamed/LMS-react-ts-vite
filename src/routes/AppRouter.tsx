@@ -61,7 +61,7 @@ const router = createBrowserRouter([
         element: <Cart />,
       },
       {
-        path: "instructor",
+        path: "team-single",
         element: <Instructor />,
       },
       {
