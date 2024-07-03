@@ -1,4 +1,4 @@
-import { Fragment, useEffect } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import CustomFilter from "@components/common/CustomFilter/CustomFilter";
 import { PageHeader } from "@components/common";
 import CourseCard from "@components/lms/CourseCard/CourseCard";
@@ -7,15 +7,18 @@ import "./CoursesPage.css";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 import actGetCourses from "@store/lms/courses/act/actGetCourses";
+import { SearchCategoryContext } from "@store/context/searchCategoryContext";
 
 const CoursesPage = () => {
   const dispatch = useAppDispatch();
   const { records } = useAppSelector((state) => state.coursesCategories);
   const { courses } = useAppSelector((state) => state.courses);
+  const {selectedCategory  } = useContext(SearchCategoryContext);
+  console.log(selectedCategory)
   useEffect(() => {
     dispatch(actGetCoursesCategories());
-    dispatch(actGetCourses());
-  }, [dispatch]);
+    dispatch(actGetCourses(selectedCategory));
+  }, [dispatch,selectedCategory]);
   const mappedOptions = records.map((record) => {
     return (
       <option key={record.id} value={record.prefix}>

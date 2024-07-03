@@ -12,6 +12,7 @@ import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { useEffect, useContext } from "react";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 import { SearchCategoryContext } from "@store/context/searchCategoryContext";
+import actGetCourses from "@store/lms/courses/act/actGetCourses";
 
 const Header = () => {
   const dispatch = useAppDispatch();
@@ -46,8 +47,8 @@ const Header = () => {
         </Navbar.Brand>
         <Nav className="left-nav d-none d-xxl-flex">
           <Form.Select aria-label="Default select example" className="select-cat" value={selectedCategory} onChange={(e)=>handleCategorySelect(e)}>
-            <option value="all">All Categories</option>
-            <option value="uncategorized">Uncategorized</option>
+            <option>All Categories</option>
+            <option>Uncategorized</option>
             {mappedOptions}
           </Form.Select>
           <Form className="d-flex">
