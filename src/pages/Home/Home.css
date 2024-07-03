@@ -322,7 +322,11 @@ form.srchcourse{
     content: "";
     position: absolute;
 }
-
+.banner-section .section-wrapper .banner-content form .banner-icon{
+    top:50%;
+    transform: translateY(-50%);
+    left:15px
+}
 .blog-single .section-wrapper .post-item .post-inner .post-content .tags-section .scocial-media,
 .blog-single .section-wrapper .post-item .post-inner .post-content blockquote p,
 .client-item .client-inner .client-content .client-info .client-name,

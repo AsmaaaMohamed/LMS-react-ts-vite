@@ -35,6 +35,7 @@ const CustomFilter = ({categoriesOptions}) => {
                       <Form.Select
                         aria-label="Default select example"
                         value={selectedCategory ? selectedCategory : "all"}
+                        onChange={(e)=>setSelectedCategory(e.target.value)}
                       >
                         <option value="all">All Categories</option>
                         <option value="uncategorized">Uncategorized</option>
