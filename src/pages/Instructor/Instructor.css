@@ -56,6 +56,51 @@
     top: 0;
     width: 50%;
 }
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content .ratting i{
+    color: #f16126;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li {
+    line-height: 38px;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr:after,
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr:before {
+    height: 2px;
+    left: -10px;
+    width: 2px;
+    background: #555;
+}
+
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr:before {
+    top: 15px;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr:after {
+    top: 20px;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr li {
+    margin-right: 20px;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr li a.twitter {
+    color: #55acee;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr li a.instagram {
+    color: #e4405f;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr li a.basketball {
+    color: #e94c89;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr li a.vimeo {
+    color: #3b5998;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li .list-attr li a.behance {
+    color: #1769ff;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content p {
+    line-height: 1.5;
+    margin-bottom: 7px;
+}
+.instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content p.ins-desc {
+    margin-bottom: 25px;
+}
 @media (min-width: 1200px) {
     .instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-thumb {
         margin-bottom: 0;
@@ -81,5 +126,8 @@
     .instructor-single-section .instructor-wrapper .instructor-single-bottom,
     .instructor-single-section .instructor-wrapper .instructor-single-top {
         padding: 60px 50px;
+    }
+    .instructor-single-section .instructor-wrapper .instructor-single-top .instructor-single-item .instructor-single-content ul li span.list-name {
+        width: 115px;
     }
 }
