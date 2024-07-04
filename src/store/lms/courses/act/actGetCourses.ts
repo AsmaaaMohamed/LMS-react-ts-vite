@@ -4,14 +4,12 @@ import TCourse from "@customTypes/course";
 
 
 type TResponse = TCourse[];
-const actGetCourses = createAsyncThunk("courses/actGetCourses" , async({category,price}, thunkAPI)=>{
+const actGetCourses = createAsyncThunk("courses/actGetCourses" , async({category,price,course}, thunkAPI)=>{
     const categoryFilter = category === "All Categories" ? "" : `category_like=${category}`;
     const priceFilter = price === "All Prices" ?"" : `price=${price}`;
+    const courseNameFilter = course === ""? "": `title_like=${course}`; 
     const{rejectWithValue} = thunkAPI;
-    let apiFilter = categoryFilter + priceFilter;
-    if(categoryFilter && priceFilter){
-        apiFilter = categoryFilter + "&&" + priceFilter;
-    }
+    const apiFilter = [categoryFilter , priceFilter , courseNameFilter].filter(Boolean).join(' && ')
     console.log(apiFilter)
     try {
         const response = await axios.get<TResponse>(`http://localhost:3005/courses?${apiFilter}`);

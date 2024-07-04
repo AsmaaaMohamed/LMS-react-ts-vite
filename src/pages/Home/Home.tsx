@@ -9,21 +9,29 @@ import PopularCategory from "@components/lms/Category/PopularCategory";
 import InstructorCard from "@components/lms/Instructor/InstructorCard";
 import SkillCard from "@components/lms/Skill/SkillCard";
 import PostCard from "@components/blog/PostCard/PostCard";
-import { Fragment, useEffect } from "react";
+import { Fragment, useContext, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 import actGetCourses from "@store/lms/courses/act/actGetCourses";
 import actGetPosts from "@store/blog/posts/act/actGetPosts";
 import actGetInstructors from "@store/lms/instructors/act/actGetInstructors";
 import actGetSkills from "@store/lms/skills/act/actGetSkills";
+import { SearchContext } from "@store/context/searchContext";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const dispatch = useAppDispatch();
+  const navigate = useNavigate();
   const {records} = useAppSelector(state=> state.coursesCategories);
   const { courses } = useAppSelector((state) => state.courses);
   const {posts} = useAppSelector((state)=> state.posts);
   const {instructors} = useAppSelector((state)=> state.instructors);
   const{skills} = useAppSelector((state)=>state.skills);
+  const{setSearchCourse} = useContext(SearchContext);
+  const handleSearchCourse=(e)=>{
+    setSearchCourse(e.target.value);
+    navigate('/courses');
+  }
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
     dispatch(actGetCourses());

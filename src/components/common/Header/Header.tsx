@@ -17,7 +17,16 @@ const Header = () => {
   const dispatch = useAppDispatch();
   const {records} = useAppSelector(state=> state.coursesCategories);
   const navigate = useNavigate();
-  const { selectedCategory, setSelectedCategory } = useContext(SearchContext);
+  const { selectedCategory, setSelectedCategory,setSearchCourse , searchCourse} = useContext(SearchContext);
+  const handleSearchCourseEnter=(e)=>{
+    if(e.key === "Enter"){
+      e.preventDefault();
+      navigate("/courses")
+    }
+  }
+  const handleChangeSearchCourse=(e)=>{
+    setSearchCourse(e.target.value);
+  }
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
   },[dispatch]);
@@ -57,6 +66,8 @@ const Header = () => {
                 placeholder="Search Here ..."
                 className=""
                 aria-label="Search"
+                onKeyDown={handleSearchCourseEnter}
+                onChange={handleChangeSearchCourse}
               />
               <Button variant="outline-secondary" id="button-addon1">
                 <i className="icofont-search icofont"></i>
