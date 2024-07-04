@@ -9,7 +9,7 @@ import NavDropdown from "react-bootstrap/NavDropdown";
 import { InputGroup } from "react-bootstrap";
 import "./Header.css";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { useEffect, useContext } from "react";
+import { useEffect, useContext, useState } from "react";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 import { SearchContext } from "@store/context/searchContext";
 
@@ -17,16 +17,22 @@ const Header = () => {
   const dispatch = useAppDispatch();
   const {records} = useAppSelector(state=> state.coursesCategories);
   const navigate = useNavigate();
-  const { selectedCategory, setSelectedCategory,setSearchCourse , searchCourse} = useContext(SearchContext);
+  const [searchCourseName , setSearchCourseName] = useState("");
+  const { selectedCategory, setSelectedCategory,setSearchCourse } = useContext(SearchContext);
   const handleSearchCourseEnter=(e)=>{
     if(e.key === "Enter"){
       e.preventDefault();
       navigate("/courses")
     }
   }
-  const handleChangeSearchCourse=(e)=>{
-    setSearchCourse(e.target.value);
+  const handleClickSearchBtn=()=>{
+      setSearchCourse(searchCourseName);
+      navigate("/courses");
   }
+  const handleChangeSearch=(e)=>{
+    setSearchCourseName(e.target.value);
+  }
+
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
   },[dispatch]);
@@ -67,9 +73,9 @@ const Header = () => {
                 className=""
                 aria-label="Search"
                 onKeyDown={handleSearchCourseEnter}
-                onChange={handleChangeSearchCourse}
+                onChange={handleChangeSearch}
               />
-              <Button variant="outline-secondary" id="button-addon1">
+              <Button variant="outline-secondary" id="button-addon1" onClick={handleClickSearchBtn}>
                 <i className="icofont-search icofont"></i>
               </Button>
             </InputGroup>
