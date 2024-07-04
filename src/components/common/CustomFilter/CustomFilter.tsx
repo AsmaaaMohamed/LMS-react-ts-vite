@@ -2,7 +2,7 @@
 import { Form } from "react-bootstrap";
 import "./CustomFilter.css";
 import { useContext } from "react";
-import { SearchCategoryContext } from "@store/context/searchCategoryContext";
+import { SearchContext } from "@store/context/searchContext";
 
 const CustomFilter = ({categoriesOptions}) => {
   // const[filteredCourses , setFilteredCourses] = useState([]);
@@ -15,7 +15,7 @@ const CustomFilter = ({categoriesOptions}) => {
   //         {name:'Bum' , age:'30' , prof:'Bow'},
   //     ]
   // },[]);
-  const { selectedCategory, setSelectedCategory , selectedPrice , setSelectedPrice } = useContext(SearchCategoryContext);
+  const { selectedCategory, setSelectedCategory , selectedPrice , setSelectedPrice } = useContext(SearchContext);
   return (
     <div className="group-select-section">
       <div className="container">

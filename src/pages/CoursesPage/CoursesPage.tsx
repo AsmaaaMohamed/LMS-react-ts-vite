@@ -7,17 +7,17 @@ import "./CoursesPage.css";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 import actGetCourses from "@store/lms/courses/act/actGetCourses";
-import { SearchCategoryContext } from "@store/context/searchCategoryContext";
+import { SearchContext } from "@store/context/searchContext";
 
 const CoursesPage = () => {
   const dispatch = useAppDispatch();
   const { records } = useAppSelector((state) => state.coursesCategories);
   const { courses } = useAppSelector((state) => state.courses);
-  const {selectedCategory , selectedPrice } = useContext(SearchCategoryContext);
+  const {selectedCategory , selectedPrice , searchCourse} = useContext(SearchContext);
   useEffect(() => {
     dispatch(actGetCoursesCategories());
-    dispatch(actGetCourses({category:selectedCategory , price:selectedPrice}));
-  }, [dispatch,selectedCategory,selectedPrice]);
+    dispatch(actGetCourses({category:selectedCategory , price:selectedPrice, course:searchCourse}));
+  }, [dispatch, selectedCategory, selectedPrice, searchCourse]);
   const mappedOptions = records.map((record) => {
     return (
       <option key={record.id} value={record.prefix}>

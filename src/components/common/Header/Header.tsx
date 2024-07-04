@@ -11,14 +11,13 @@ import "./Header.css";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { useEffect, useContext } from "react";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
-import { SearchCategoryContext } from "@store/context/searchCategoryContext";
-import actGetCourses from "@store/lms/courses/act/actGetCourses";
+import { SearchContext } from "@store/context/searchContext";
 
 const Header = () => {
   const dispatch = useAppDispatch();
   const {records} = useAppSelector(state=> state.coursesCategories);
   const navigate = useNavigate();
-  const { selectedCategory, setSelectedCategory } = useContext(SearchCategoryContext);
+  const { selectedCategory, setSelectedCategory } = useContext(SearchContext);
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
   },[dispatch]);

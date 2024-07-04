@@ -15,7 +15,7 @@ import Login from "@pages/Login/Login";
 import Register from "@pages/Register/Register";
 import ForgetPass from "@pages/ForgetPass/ForgetPass";
 import Error from "@pages/Error/Error";
-import CategoryContextProvider from "@store/context/searchCategoryContext";
+import SearchContextProvider from "@store/context/searchContext";
 import Instructor from "@pages/Instructor/Instructor";
 
 const router = createBrowserRouter([
@@ -85,9 +85,9 @@ const router = createBrowserRouter([
 ]);
 const AppRouter = () => {
   return (
-     <CategoryContextProvider>
+     <SearchContextProvider>
         <RouterProvider router={router} />
-    </CategoryContextProvider>
+    </SearchContextProvider>
 );
 };
 export default AppRouter;
