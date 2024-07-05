@@ -9,7 +9,7 @@ import PopularCategory from "@components/lms/Category/PopularCategory";
 import InstructorCard from "@components/lms/Instructor/InstructorCard";
 import SkillCard from "@components/lms/Skill/SkillCard";
 import PostCard from "@components/blog/PostCard/PostCard";
-import { Fragment, useContext, useEffect } from "react";
+import { Fragment, useContext, useEffect, useState } from "react";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 import actGetCourses from "@store/lms/courses/act/actGetCourses";
@@ -28,9 +28,19 @@ const Home = () => {
   const {instructors} = useAppSelector((state)=> state.instructors);
   const{skills} = useAppSelector((state)=>state.skills);
   const{setSearchCourse} = useContext(SearchContext);
-  const handleSearchCourse=(e)=>{
-    setSearchCourse(e.target.value);
-    navigate('/courses');
+  const [searchCourseName , setSearchCourseName] = useState("");
+  const handleSearchCourseEnter=(e)=>{
+    if(e.key === "Enter"){
+      e.preventDefault();
+      navigate("/courses")
+    }
+  }
+  const handleClickSearchBtn=()=>{
+      setSearchCourse(searchCourseName);
+      navigate("/courses");
+  }
+  const handleChangeSearch=(e)=>{
+    setSearchCourseName(e.target.value);
   }
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
@@ -100,8 +110,10 @@ const Home = () => {
                       placeholder="Keywords of your course"
                       className=""
                       aria-label="Search"
+                      onChange={handleChangeSearch}
+                      onKeyDown={handleSearchCourseEnter}
                     />
-                    <Button>Search Course</Button>
+                    <Button onClick={handleClickSearchBtn}>Search Course</Button>
                   </Form>
                   <div className="banner-catagory d-flex flex-wrap">
                     <p>Most Popular : </p>

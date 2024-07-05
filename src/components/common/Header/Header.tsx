@@ -18,7 +18,7 @@ const Header = () => {
   const {records} = useAppSelector(state=> state.coursesCategories);
   const navigate = useNavigate();
   const [searchCourseName , setSearchCourseName] = useState("");
-  const { selectedCategory, setSelectedCategory,setSearchCourse } = useContext(SearchContext);
+  const { selectedCategory, setSelectedCategory,setSearchCourse ,  searchCourse } = useContext(SearchContext);
   const handleSearchCourseEnter=(e)=>{
     if(e.key === "Enter"){
       e.preventDefault();
@@ -74,6 +74,7 @@ const Header = () => {
                 aria-label="Search"
                 onKeyDown={handleSearchCourseEnter}
                 onChange={handleChangeSearch}
+                value={searchCourse}
               />
               <Button variant="outline-secondary" id="button-addon1" onClick={handleClickSearchBtn}>
                 <i className="icofont-search icofont"></i>
