@@ -45,6 +45,10 @@
     border-radius: 4px;
     box-shadow: 0 2px 4px 0 rgba(0,0,0,.06);
 }
+ .contact-section form .btn, .contact-section form .btn:active {
+    background-color: #f16126;
+    border-color: #f16126;
+}
 @media (min-width: 1200px){
     .contact-section .contact-form, .contact-section .section-header {
         margin: 0 auto;

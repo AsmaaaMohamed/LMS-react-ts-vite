@@ -1,4 +1,5 @@
 import { useFormik } from "formik";
+import { Button, Form } from "react-bootstrap";
 import * as Yup from "yup";
 
 const contactSchema = Yup.object().shape({
@@ -22,9 +23,9 @@ const ContactForm = () => {
       },
     });
   return (
-    <form className="contact-form" onSubmit={formik.handleSubmit}>
-      <div className="form-group">
-        <input
+    <Form className="contact-form" onSubmit={formik.handleSubmit}>
+      <Form.Group className="form-group">
+        <Form.Control
           type="text"
           name="name"
           placeholder="Your Name *"
@@ -35,9 +36,9 @@ const ContactForm = () => {
         {formik.errors.name && formik.touched.name ? (
           <div>{formik.errors.name}</div>
         ) : null}
-      </div>
-      <div className="form-group">
-        <input
+      </Form.Group>
+      <Form.Group className="form-group">
+        <Form.Control
           type="text"
           name="email"
           placeholder="Your Email *"
@@ -48,9 +49,9 @@ const ContactForm = () => {
         {formik.errors.email && formik.touched.email ? (
           <div>{formik.errors.email}</div>
         ) : null}
-      </div>
-      <div className="form-group">
-        <input
+      </Form.Group>
+      <Form.Group className="form-group">
+        <Form.Control
           type="text"
           name="number"
           placeholder="Mobile Number *"
@@ -61,9 +62,9 @@ const ContactForm = () => {
         {formik.errors.number && formik.touched.number ? (
           <div>{formik.errors.number}</div>
         ) : null}
-      </div>
-      <div className="form-group">
-        <input
+      </Form.Group>
+      <Form.Group className="form-group">
+        <Form.Control
           type="text"
           name="subject"
           placeholder="Your Subject *"
@@ -72,25 +73,27 @@ const ContactForm = () => {
           onBlur={formik.handleBlur}
         />
         {formik.errors.subject && formik.touched.subject ? (
-          <div>{formik.errors.subject}</div>
+          <Form.Control.Feedback type="invalid">
+            formik.errors.subject
+          </Form.Control.Feedback>
         ) : null}
-      </div>
-      <div className="form-group w-100">
-        <textarea
-          rows="8"
-          type="text"
+      </Form.Group>
+      <Form.Group className="form-group w-100">
+        <Form.Control
+          rows={8}
+          as="textarea"
           name="message"
           placeholder="Your Message"
           value={formik.values.message}
           onChange={formik.handleChange}
-        ></textarea>
-      </div>
-      <div className="form-group w-100 text-center">
-        <button className="lab-btn" type="submit">
+        ></Form.Control>
+      </Form.Group>
+      <Form.Group className="form-group w-100 text-center">
+        <Button className="lab-btn" type="submit">
           <span>Send our Message</span>
-        </button>
-      </div>
-    </form>
+        </Button>
+      </Form.Group>
+    </Form>
   );
 };
 
