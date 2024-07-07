@@ -4,9 +4,9 @@ import * as Yup from "yup";
 
 const contactSchema = Yup.object().shape({
   name: Yup.string().required("Name is Required"),
-  number: Yup.string().required("Mobile Number is Requires"),
-  email: Yup.string().email("Enter a valid Email").required("Email is Requires"),
-  subject: Yup.string().required("Subject is Requires")
+  number: Yup.string().required("Mobile Number is Required"),
+  email: Yup.string().email("Enter a valid Email").required("Email is Required"),
+  subject: Yup.string().required("Subject is Required")
 });
 const ContactForm = () => {
     const formik = useFormik({
@@ -32,9 +32,13 @@ const ContactForm = () => {
           value={formik.values.name}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          isValid={!formik.errors.name && formik.touched.name}
         />
+        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         {formik.errors.name && formik.touched.name ? (
-          <div>{formik.errors.name}</div>
+          <Form.Control.Feedback type="invalid" className="d-block">
+            {formik.errors.name}
+          </Form.Control.Feedback>
         ) : null}
       </Form.Group>
       <Form.Group className="form-group">
@@ -45,9 +49,13 @@ const ContactForm = () => {
           value={formik.values.email}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          isValid={!formik.errors.email && formik.touched.email}
         />
+        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         {formik.errors.email && formik.touched.email ? (
-          <div>{formik.errors.email}</div>
+          <Form.Control.Feedback type="invalid" className="d-block">
+            {formik.errors.email}
+          </Form.Control.Feedback>
         ) : null}
       </Form.Group>
       <Form.Group className="form-group">
@@ -58,9 +66,13 @@ const ContactForm = () => {
           value={formik.values.number}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          isValid={!formik.errors.number && formik.touched.number}
         />
+        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         {formik.errors.number && formik.touched.number ? (
-          <div>{formik.errors.number}</div>
+          <Form.Control.Feedback type="invalid" className="d-block">
+            {formik.errors.number}
+          </Form.Control.Feedback>
         ) : null}
       </Form.Group>
       <Form.Group className="form-group">
@@ -71,10 +83,12 @@ const ContactForm = () => {
           value={formik.values.subject}
           onChange={formik.handleChange}
           onBlur={formik.handleBlur}
+          isValid={formik.touched.subject && !formik.errors.subject}
         />
+        <Form.Control.Feedback>Looks good!</Form.Control.Feedback>
         {formik.errors.subject && formik.touched.subject ? (
-          <Form.Control.Feedback type="invalid">
-            formik.errors.subject
+          <Form.Control.Feedback type="invalid" className="d-block">
+            {formik.errors.subject}
           </Form.Control.Feedback>
         ) : null}
       </Form.Group>
