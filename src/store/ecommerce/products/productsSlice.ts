@@ -14,7 +14,7 @@ const initialState:IProductsState = {
     error:null,
 };
 const productsSlice = createSlice({
-    name:"categories",
+    name:"products",
     initialState,
     reducers:{},
     extraReducers:(builder) => {
