@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import TInstructor from "@customTypes/instructor";
+import axiosErrorHandler from "@utils/axiosErrorHandler";
 
 type TResponse = TInstructor[];
 const actGetInstructors = createAsyncThunk("instructors/actGetInstructors" , async(_, thunkAPI)=>{
@@ -9,10 +10,7 @@ const actGetInstructors = createAsyncThunk("instructors/actGetInstructors" , asy
         const response = await axios.get<TResponse>("http://localhost:3005/instructors");
         return response.data;
     } catch (error) {
-        if (axios.isAxiosError(error))
-          return rejectWithValue(error.response?.data.message || error.message);
-        else
-            return rejectWithValue("An unexpected error");
+        return rejectWithValue(axiosErrorHandler(error));
     }
 });
 export default actGetInstructors;

@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import TLoading from "@customTypes/shared";
 import TInstructor from "@customTypes/instructor";
 import actGetInstructors from "./act/actGetInstructors";
+import { isString } from "@customTypes/guards";
 
 interface IInstructorsState{
     instructors:TInstructor[];
@@ -28,7 +29,7 @@ const instructorsSlice = createSlice({
         })
         .addCase(actGetInstructors.rejected , (state,action)=>{
             state.loading ="failed";
-            if(action.payload && typeof action.payload === "string")
+            if(isString(action.payload))
                 state.error = action.payload;
         })
     }

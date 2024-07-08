@@ -4,6 +4,7 @@ import coursesReducer from "@store/lms/courses/coursesSlice";
 import postsReducer from "@store/blog/posts/postsSlice";
 import instructorsReducer from "@store/lms/instructors/instructorsSlice";
 import skillsReducer from "@store/lms/skills/skillsSlice";
+import authSlice from "./auth/authSlice";
 
 export const store = configureStore({
   reducer: {
@@ -11,7 +12,8 @@ export const store = configureStore({
     courses: coursesReducer,
     posts: postsReducer,
     instructors: instructorsReducer,
-    skills: skillsReducer
+    skills: skillsReducer,
+    auth: authSlice
   },
 });
 

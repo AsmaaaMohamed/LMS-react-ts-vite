@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import TPost from "@customTypes/post";
 import axios from "axios";
+import axiosErrorHandler from "@utils/axiosErrorHandler";
 
 type TResponse = TPost[];
 const actGetPosts = createAsyncThunk(
@@ -13,9 +14,7 @@ const actGetPosts = createAsyncThunk(
       );
       return response.data;
     } catch (error) {
-      if (axios.isAxiosError(error))
-        return rejectWithValue(error.response?.data.message || error.message);
-      else return rejectWithValue("An unexpected error");
+      return rejectWithValue(axiosErrorHandler(error));
     }
   }
 );

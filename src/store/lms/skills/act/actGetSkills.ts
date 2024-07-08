@@ -1,6 +1,7 @@
 import { createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 import TSkill from "@customTypes/skill";
+import axiosErrorHandler from "@utils/axiosErrorHandler";
 
 type TResponse = TSkill[];
 const actGetSkills = createAsyncThunk("skills/actGetSkills" , async(_, thunkAPI)=>{
@@ -9,10 +10,7 @@ const actGetSkills = createAsyncThunk("skills/actGetSkills" , async(_, thunkAPI)
         const response = await axios.get<TResponse>("http://localhost:3005/skills");
         return response.data;
     } catch (error) {
-        if (axios.isAxiosError(error))
-          return rejectWithValue(error.response?.data.message || error.message);
-        else
-            return rejectWithValue("An unexpected error");
+        return rejectWithValue(axiosErrorHandler(error));
     }
 });
 export default actGetSkills;

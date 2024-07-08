@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import actGetCourses from "./act/actGetCourses";
 import TLoading from "@customTypes/shared";
 import TCourse from "@customTypes/course";
+import { isString } from "@customTypes/guards";
 
 interface ICoursesState{
     courses:TCourse[];
@@ -28,7 +29,7 @@ const coursesSlice = createSlice({
         })
         .addCase(actGetCourses.rejected , (state,action)=>{
             state.loading ="failed";
-            if(action.payload && typeof action.payload === "string")
+            if(isString(action.payload))
                 state.error = action.payload;
         })
     }

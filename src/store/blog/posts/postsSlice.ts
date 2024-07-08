@@ -2,6 +2,7 @@ import { createSlice } from "@reduxjs/toolkit";
 import TLoading from "@customTypes/shared";
 import TPost from "@customTypes/post";
 import actGetPosts from "./act/actGetPosts";
+import { isString } from "@customTypes/guards";
 
 interface IPostsState {
   posts: TPost[];
@@ -29,7 +30,7 @@ const postsSlice = createSlice({
       })
       .addCase(actGetPosts.rejected, (state, action) => {
         state.loading = "failed";
-        if (action.payload && typeof action.payload === "string")
+        if (isString(action.payload))
           state.error = action.payload;
       });
   },

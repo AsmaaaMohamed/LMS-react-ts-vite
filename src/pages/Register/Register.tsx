@@ -1,8 +1,26 @@
 import { Button, Form } from "react-bootstrap";
 import { PageHeader } from "@components/common";
 import { Fragment } from "react";
+import { useAppDispatch } from "@store/hooks";
+import { actAuthRegister } from "@store/auth/authSlice";
+import { SubmitHandler, useForm } from "react-hook-form";
+
+
+type TFormInput ={
+  username: string,
+  email: string,
+  password: string,
+  confirmPassword: string
+}
 
 const Register = () => {
+  const disparch = useAppDispatch();
+  const {register, handleSubmit} = useForm<TFormInput>();
+  const submitForm: SubmitHandler<TFormInput> = (data)=>{
+    const{username , email , password , confirmPassword} = data;
+    disparch(actAuthRegister({username , email , password , confirmPassword}));
+    console.log(data)
+  }
   return (
     <Fragment>
       <PageHeader />
@@ -10,20 +28,21 @@ const Register = () => {
         <div className="container">
           <div className="account-wrapper">
             <h3 className="title">Register Now</h3>
-            <Form className="account-form">
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="text" placeholder="User Name *" />
+            <Form className="account-form" onSubmit={handleSubmit(submitForm)}>
+              <Form.Group className="mb-3" controlId="formBasicUserName">
+                <Form.Control type="text" placeholder="User Name *" {...register("username")}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Email *" />
+                <Form.Control type="email" placeholder="Email *" {...register("email")}/>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Password *" />
+                <Form.Control type="password" placeholder="Password *" {...register("password")}/>
               </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
+              <Form.Group className="mb-3" controlId="formBasicPasswordConfirm">
                 <Form.Control
                   type="password"
                   placeholder="Confirm Password *"
+                  {...register("confirmPassword")}
                 />
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
