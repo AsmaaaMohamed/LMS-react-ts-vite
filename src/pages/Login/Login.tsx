@@ -2,8 +2,23 @@ import { Fragment } from "react";
 import "./Login.css";
 import { Button, Form } from "react-bootstrap";
 import { PageHeader } from "@components/common";
+import { SubmitHandler, useForm } from "react-hook-form";
+import { signInSchema, signInType } from "@validations/signInSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
+import { Input } from "@components/forms";
 
 const Login = () => {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm<signInType>({
+    mode: "onBlur",
+    resolver: zodResolver(signInSchema),
+  });
+  const submitForm: SubmitHandler<signInType> = (data) => {
+    console.log(data);
+  };
   return (
     <Fragment>
       <PageHeader />
@@ -12,13 +27,19 @@ const Login = () => {
           <div className="account-wrapper">
             <h3 className="title">Login</h3>
             <Form className="account-form">
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="text" placeholder="User Name *" />
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Password *" />
-              </Form.Group>
+              <Input
+                placeHolder="User Name *"
+                register={register}
+                error={errors.username?.message}
+                name="username"
+              />
+              <Input
+                placeHolder="Password *"
+                register={register}
+                error={errors.password?.message}
+                name="password"
+                type="password"
+              />
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Form.Check
                   type="checkbox"

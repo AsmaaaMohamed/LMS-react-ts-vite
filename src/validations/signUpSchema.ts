@@ -10,9 +10,8 @@ const signUpSchema = z
       .regex(/.*[!@#$%^&*()_+{}|[\]\\:";'<>?,./].*/, {
         message: "Password should contain at least 1 special character",
       }),
-    confirmPassword: z
-      .string()
-      .min(1, { message: "Confirm Password is required" }),
+    confirmPassword: z.string()
+                    .min(1, { message: "Confirm Password is required" }),
   })
   .refine((input) => input.password === input.confirmPassword, {
     message: "Password and Confirm Password does not match",
