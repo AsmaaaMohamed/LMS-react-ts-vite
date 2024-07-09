@@ -1,4 +1,6 @@
-.login-section form div:first-child{
+.login-section form div:first-child,
+.login-section form div div
+{
     text-align: left !important;
 }
 .login-section form div:nth-child(3){

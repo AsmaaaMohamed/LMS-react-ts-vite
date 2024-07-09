@@ -4,19 +4,14 @@ import { Fragment } from "react";
 import { useAppDispatch } from "@store/hooks";
 import { actAuthRegister } from "@store/auth/authSlice";
 import { SubmitHandler, useForm } from "react-hook-form";
-
-
-type TFormInput ={
-  username: string,
-  email: string,
-  password: string,
-  confirmPassword: string
-}
+import { signUpSchema, type signUpType } from "@validations/signUpSchema";
+import { zodResolver } from "@hookform/resolvers/zod";
 
 const Register = () => {
   const disparch = useAppDispatch();
-  const {register, handleSubmit} = useForm<TFormInput>();
-  const submitForm: SubmitHandler<TFormInput> = (data)=>{
+  const {register, handleSubmit , formState:{errors}} = useForm<signUpType>({
+                                                                      resolver:zodResolver(signUpSchema),mode:"onBlur"});
+  const submitForm: SubmitHandler<signUpType> = (data)=>{
     const{username , email , password , confirmPassword} = data;
     disparch(actAuthRegister({username , email , password , confirmPassword}));
     console.log(data)
@@ -30,20 +25,49 @@ const Register = () => {
             <h3 className="title">Register Now</h3>
             <Form className="account-form" onSubmit={handleSubmit(submitForm)}>
               <Form.Group className="mb-3" controlId="formBasicUserName">
-                <Form.Control type="text" placeholder="User Name *" {...register("username")}/>
+                <Form.Control
+                  type="text"
+                  placeholder="User Name *"
+                  {...register("username")}
+                  isInvalid={!!errors.username?.message}
+                />
+                <Form.Control.Feedback type="invalid" className="d-block">
+                  {errors.username?.message}
+                </Form.Control.Feedback>
               </Form.Group>
+
               <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control type="email" placeholder="Email *" {...register("email")}/>
+                <Form.Control
+                  type="email"
+                  placeholder="Email *"
+                  {...register("email")}
+                  isInvalid={!!errors.email?.message}
+                />
+                <Form.Control.Feedback type="invalid" className="d-block">
+                  {errors.email?.message}
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control type="password" placeholder="Password *" {...register("password")}/>
+                <Form.Control
+                  type="password"
+                  placeholder="Password *"
+                  {...register("password")}
+                  isInvalid={!!errors.password?.message}
+                />
+                <Form.Control.Feedback type="invalid" className="d-block">
+                  {errors.password?.message}
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicPasswordConfirm">
                 <Form.Control
                   type="password"
                   placeholder="Confirm Password *"
                   {...register("confirmPassword")}
+                  isInvalid={!!errors.confirmPassword?.message}
                 />
+                <Form.Control.Feedback type="invalid" className="d-block">
+                  {errors.confirmPassword?.message}
+                </Form.Control.Feedback>
               </Form.Group>
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Button
