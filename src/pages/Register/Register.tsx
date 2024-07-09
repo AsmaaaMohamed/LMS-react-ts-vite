@@ -6,6 +6,7 @@ import { actAuthRegister } from "@store/auth/authSlice";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { signUpSchema, type signUpType } from "@validations/signUpSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
+import { Input } from "@components/forms";
 
 const Register = () => {
   const disparch = useAppDispatch();
@@ -24,51 +25,33 @@ const Register = () => {
           <div className="account-wrapper">
             <h3 className="title">Register Now</h3>
             <Form className="account-form" onSubmit={handleSubmit(submitForm)}>
-              <Form.Group className="mb-3" controlId="formBasicUserName">
-                <Form.Control
-                  type="text"
-                  placeholder="User Name *"
-                  {...register("username")}
-                  isInvalid={!!errors.username?.message}
-                />
-                <Form.Control.Feedback type="invalid" className="d-block">
-                  {errors.username?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
-
-              <Form.Group className="mb-3" controlId="formBasicEmail">
-                <Form.Control
-                  type="email"
-                  placeholder="Email *"
-                  {...register("email")}
-                  isInvalid={!!errors.email?.message}
-                />
-                <Form.Control.Feedback type="invalid" className="d-block">
-                  {errors.email?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPassword">
-                <Form.Control
-                  type="password"
-                  placeholder="Password *"
-                  {...register("password")}
-                  isInvalid={!!errors.password?.message}
-                />
-                <Form.Control.Feedback type="invalid" className="d-block">
-                  {errors.password?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
-              <Form.Group className="mb-3" controlId="formBasicPasswordConfirm">
-                <Form.Control
-                  type="password"
-                  placeholder="Confirm Password *"
-                  {...register("confirmPassword")}
-                  isInvalid={!!errors.confirmPassword?.message}
-                />
-                <Form.Control.Feedback type="invalid" className="d-block">
-                  {errors.confirmPassword?.message}
-                </Form.Control.Feedback>
-              </Form.Group>
+              <Input
+                placeHolder="User Name *"
+                register={register}
+                error={errors.username?.message}
+                name="username"
+              />
+              <Input
+                placeHolder="Email *"
+                register={register}
+                error={errors.email?.message}
+                name="email"
+                type="email"
+              />
+              <Input
+                placeHolder="Password *"
+                register={register}
+                error={errors.password?.message}
+                name="password"
+                type="password"
+              />
+              <Input
+                placeHolder="Confirm Password *"
+                register={register}
+                error={errors.confirmPassword?.message}
+                name="confirmPassword"
+                type="password"
+              />
               <Form.Group className="mb-3" controlId="formBasicCheckbox">
                 <Button
                   variant="primary"

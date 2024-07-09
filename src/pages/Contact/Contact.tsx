@@ -1,7 +1,7 @@
 import "./Contact.css";
 import { Fragment } from "react";
 import { PageHeader } from "@components/common";
-import ContactForm from "@components/forms/ContactForm";
+import { ContactForm } from "@components/forms";
 
 const Contact = () => {
   return (
