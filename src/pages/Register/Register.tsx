@@ -7,15 +7,32 @@ import { SubmitHandler, useForm } from "react-hook-form";
 import { signUpSchema, type signUpType } from "@validations/signUpSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@components/forms";
+import useCheckEmailAvailability from "@hooks/useCheckEmailAvailability";
 
 const Register = () => {
   const disparch = useAppDispatch();
-  const {register, handleSubmit , formState:{errors}} = useForm<signUpType>({
-                                                                      resolver:zodResolver(signUpSchema),mode:"onBlur"});
+  const {register, handleSubmit , getFieldState, trigger, formState:{errors}} = 
+    useForm<signUpType>({resolver:zodResolver(signUpSchema),mode:"onBlur"});
+  const {
+    checkEmailAvailability,
+    prevEnteredEmail,
+    emailAvailabilityStatus,
+    resetCheckEmailAvailability,
+  } = useCheckEmailAvailability();
+  const emailOnBlurHandler = async(e: React.FocusEvent<HTMLInputElement>) =>{
+    await trigger("email");
+    const inputValue = e.target.value;
+    const {isDirty , invalid} = getFieldState("email");
+    if(isDirty && !invalid && prevEnteredEmail !== inputValue){
+      checkEmailAvailability(inputValue);
+    }
+    if (isDirty && invalid && prevEnteredEmail) {
+      resetCheckEmailAvailability();
+    }
+  }
   const submitForm: SubmitHandler<signUpType> = (data)=>{
     const{username , email , password , confirmPassword} = data;
     disparch(actAuthRegister({username , email , password , confirmPassword}));
-    console.log(data)
   }
   return (
     <Fragment>
@@ -34,9 +51,29 @@ const Register = () => {
               <Input
                 placeHolder="Email *"
                 register={register}
-                error={errors.email?.message}
                 name="email"
                 type="email"
+                onBlur={emailOnBlurHandler}
+                error={
+                  errors.email?.message
+                    ? errors.email?.message
+                    : emailAvailabilityStatus === "notAvailable"
+                    ? "This email is already in use."
+                    : emailAvailabilityStatus === "failed"
+                    ? "Error from the server."
+                    : ""
+                }
+                formText={
+                  emailAvailabilityStatus === "checking"
+                    ? "We're currently checking the availability of this email address. Please wait a moment."
+                    : ""
+                }
+                success={
+                  emailAvailabilityStatus === "available"
+                    ? "This email is available for use."
+                    : ""
+                }
+                disabled={emailAvailabilityStatus === "checking"}
               />
               <Input
                 placeHolder="Password *"
@@ -57,6 +94,9 @@ const Register = () => {
                   variant="primary"
                   type="submit"
                   className="lab-btn d-block"
+                  disabled={
+                    emailAvailabilityStatus === "checking"
+                  }
                 >
                   Get Started Now
                 </Button>

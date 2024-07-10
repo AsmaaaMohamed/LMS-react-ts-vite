@@ -26,7 +26,7 @@ const Login = () => {
         <div className="container">
           <div className="account-wrapper">
             <h3 className="title">Login</h3>
-            <Form className="account-form">
+            <Form className="account-form" onSubmit={handleSubmit(submitForm)}>
               <Input
                 placeHolder="User Name *"
                 register={register}
