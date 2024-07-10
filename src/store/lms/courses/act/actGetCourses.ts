@@ -13,7 +13,7 @@ const actGetCourses = createAsyncThunk("courses/actGetCourses" , async({category
     const apiFilter = [categoryFilter , priceFilter , courseNameFilter].filter(Boolean).join(' && ')
     console.log(apiFilter)
     try {
-        const response = await axios.get<TResponse>(`http://localhost:3005/courses?${apiFilter}`);
+        const response = await axios.get<TResponse>(`/courses?${apiFilter}`);
         return response.data;
     } catch (error) {
         return rejectWithValue(axiosErrorHandler(error));

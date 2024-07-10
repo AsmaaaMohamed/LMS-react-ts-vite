@@ -9,7 +9,7 @@ const useCheckEmailAvailability =()=>{
       setEnteredEmail(email);
       setEmailAvailabilityStatus("checking");
       try {
-        const response = await axios.get(`http://localhost:3005/users?email=${email}`);
+        const response = await axios.get(`/users?email=${email}`);
         if (!response.data.length) {
           setEmailAvailabilityStatus("available");
         } else {

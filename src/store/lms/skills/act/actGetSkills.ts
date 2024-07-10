@@ -7,7 +7,7 @@ type TResponse = TSkill[];
 const actGetSkills = createAsyncThunk("skills/actGetSkills" , async(_, thunkAPI)=>{
     const{rejectWithValue} = thunkAPI;
     try {
-        const response = await axios.get<TResponse>("http://localhost:3005/skills");
+        const response = await axios.get<TResponse>("/skills");
         return response.data;
     } catch (error) {
         return rejectWithValue(axiosErrorHandler(error));

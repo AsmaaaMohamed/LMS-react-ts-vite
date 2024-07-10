@@ -10,7 +10,7 @@ const actGetPosts = createAsyncThunk(
     const { rejectWithValue } = thunkAPI;
     try {
       const response = await axios.get<TResponse>(
-        "http://localhost:3005/posts"
+        "/posts"
       );
       return response.data;
     } catch (error) {

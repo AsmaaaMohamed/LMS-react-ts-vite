@@ -7,7 +7,7 @@ type TResponse = TCategory[];
 const actGetProducts = createAsyncThunk("products/actGetProducts" , async(_, thunkAPI)=>{
     const{rejectWithValue} = thunkAPI;
     try {
-        const response = await axios.get<TResponse>("http://localhost:3005/products");
+        const response = await axios.get<TResponse>("/products");
         return response.data;
     } catch (error) {
         return rejectWithValue(axiosErrorHandler(error));
