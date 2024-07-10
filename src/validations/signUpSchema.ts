@@ -6,10 +6,7 @@ const signUpSchema = z
     email: z.string().min(1, { message: "Email is required" }).email(),
     password: z
       .string()
-      .min(1, { message: "Password must be at least 8 characters long" })
-      .regex(/.*[!@#$%^&*()_+{}|[\]\\:";'<>?,./].*/, {
-        message: "Password should contain at least 1 special character",
-      }),
+      .min(1, { message: "Password must be at least 8 characters long" }),
     confirmPassword: z.string()
                     .min(1, { message: "Confirm Password is required" }),
   })
