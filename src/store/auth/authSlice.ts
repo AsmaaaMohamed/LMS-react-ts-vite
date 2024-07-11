@@ -25,6 +25,7 @@ const authSlice = createSlice({
     initialState,
     reducers:{
         resetErrorMessages(state){
+            state.loading="idle";
             state.error = null;
         }
     },
