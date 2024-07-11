@@ -23,7 +23,11 @@ const initialState: IAuthState={
 const authSlice = createSlice({
     name:"auth",
     initialState,
-    reducers:{},
+    reducers:{
+        resetErrorMessages(state){
+            state.error = null;
+        }
+    },
     extraReducers:(builder) => {
         builder
           .addCase(actAuthRegister.pending, (state) => {
@@ -56,4 +60,5 @@ const authSlice = createSlice({
     }
 });
 export {actAuthRegister , actAuthLogin};
+export const { resetErrorMessages } = authSlice.actions;
 export default authSlice.reducer;

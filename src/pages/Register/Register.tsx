@@ -1,8 +1,8 @@
 import { Button, Form , Spinner} from "react-bootstrap";
 import { PageHeader } from "@components/common";
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
-import { actAuthRegister } from "@store/auth/authSlice";
+import { actAuthRegister, resetErrorMessages } from "@store/auth/authSlice";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { signUpSchema, type signUpType } from "@validations/signUpSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
@@ -40,8 +40,12 @@ const Register = () => {
     .then(()=>{
       navigate("/login?message=account_created");
     });
-      
   }
+  useEffect(() => {
+    return () => {
+      disparch(resetErrorMessages());
+    };
+  }, [disparch]);
   return (
     <Fragment>
       <PageHeader />

@@ -1,4 +1,4 @@
-import { Fragment } from "react";
+import { Fragment, useEffect } from "react";
 import "./Login.css";
 import { Alert, Button, Form, Spinner } from "react-bootstrap";
 import { PageHeader } from "@components/common";
@@ -7,13 +7,14 @@ import { signInSchema, signInType } from "@validations/signInSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@components/forms";
 import { useNavigate, useSearchParams } from "react-router-dom";
-import { actAuthLogin } from "@store/auth/authSlice";
+import { actAuthLogin, resetErrorMessages } from "@store/auth/authSlice";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 
 const Login = () => {
   const dispatch = useAppDispatch();
   const navigate = useNavigate();
   const{loading , error} = useAppSelector((state)=>state.auth)
+  console.log(error)
   const {
     register,
     handleSubmit,
@@ -32,6 +33,11 @@ const Login = () => {
       navigate("/");
     });
   };
+  useEffect(()=>{
+    return()=>{
+      dispatch(resetErrorMessages());
+    };
+  },[dispatch]);
  
   return (
     <Fragment>
@@ -44,6 +50,9 @@ const Login = () => {
               <Alert variant="success">
                 Your account successfully created, please login
               </Alert>
+            )}
+            {error && (
+              <p style={{ color: "#DC3545", marginTop: "10px" }}>{error}</p>
             )}
             <h3 className="title">Login</h3>
             <Form className="account-form" onSubmit={handleSubmit(submitForm)}>
@@ -78,16 +87,17 @@ const Login = () => {
                 >
                   <>
                     {loading === "pending" ? (
-                      <Spinner animation="border" size="sm" style={{marginRight:"4px"}}></Spinner>
+                      <Spinner
+                        animation="border"
+                        size="sm"
+                        style={{ marginRight: "4px" }}
+                      ></Spinner>
                     ) : (
                       ""
                     )}
                   </>
                   Submit Now
                 </Button>
-                {error && (
-                  <p style={{ color: "#DC3545", marginTop: "10px" }}>{error}</p>
-                )}
               </Form.Group>
             </Form>
             <div className="account-bottom">
