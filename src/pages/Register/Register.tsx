@@ -1,18 +1,21 @@
-import { Button, Form } from "react-bootstrap";
+import { Button, Form , Spinner} from "react-bootstrap";
 import { PageHeader } from "@components/common";
 import { Fragment } from "react";
-import { useAppDispatch } from "@store/hooks";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
 import { actAuthRegister } from "@store/auth/authSlice";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { signUpSchema, type signUpType } from "@validations/signUpSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@components/forms";
 import useCheckEmailAvailability from "@hooks/useCheckEmailAvailability";
+import { useNavigate } from "react-router-dom";
 
 const Register = () => {
   const disparch = useAppDispatch();
+  const navigate = useNavigate();
   const {register, handleSubmit , getFieldState, trigger, formState:{errors}} = 
     useForm<signUpType>({resolver:zodResolver(signUpSchema),mode:"onBlur"});
+  const{loading, error} = useAppSelector((state)=> state.auth);
   const {
     checkEmailAvailability,
     prevEnteredEmail,
@@ -30,9 +33,14 @@ const Register = () => {
       resetCheckEmailAvailability();
     }
   }
-  const submitForm: SubmitHandler<signUpType> = (data)=>{
-    const{username , email , password , confirmPassword} = data;
-    disparch(actAuthRegister({username , email , password , confirmPassword}));
+  const submitForm: SubmitHandler<signUpType> = async(data)=>{
+    const{username , email , password} = data;
+    disparch(actAuthRegister({username , email, password}))
+    .unwrap()
+    .then(()=>{
+      navigate("/login?message=account_created");
+    });
+      
   }
   return (
     <Fragment>
@@ -95,11 +103,22 @@ const Register = () => {
                   type="submit"
                   className="lab-btn d-block"
                   disabled={
-                    emailAvailabilityStatus === "checking"
+                    emailAvailabilityStatus === "checking" ||
+                    loading === "pending"
                   }
                 >
-                  Get Started Now
+                  <>
+                    {loading === "pending" ? (
+                      <Spinner animation="border" size="sm" style={{marginRight:"4px"}}></Spinner>
+                    ) : (
+                      ""
+                    )}
+                    Get Started Now
+                  </>
                 </Button>
+                {error && (
+                  <p style={{ color: "#DC3545", marginTop: "10px" }}>{error}</p>
+                )}
               </Form.Group>
             </Form>
             <div className="account-bottom">

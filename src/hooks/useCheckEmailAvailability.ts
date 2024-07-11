@@ -23,7 +23,6 @@ const useCheckEmailAvailability =()=>{
     const resetCheckEmailAvailability=()=>{
         setEmailAvailabilityStatus("idle");
         setEnteredEmail(null);
-
     }
     return {
       emailAvailabilityStatus,

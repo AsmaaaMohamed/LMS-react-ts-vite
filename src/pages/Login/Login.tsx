@@ -1,13 +1,19 @@
 import { Fragment } from "react";
 import "./Login.css";
-import { Button, Form } from "react-bootstrap";
+import { Alert, Button, Form, Spinner } from "react-bootstrap";
 import { PageHeader } from "@components/common";
 import { SubmitHandler, useForm } from "react-hook-form";
 import { signInSchema, signInType } from "@validations/signInSchema";
 import { zodResolver } from "@hookform/resolvers/zod";
 import { Input } from "@components/forms";
+import { useNavigate, useSearchParams } from "react-router-dom";
+import { actAuthLogin } from "@store/auth/authSlice";
+import { useAppDispatch, useAppSelector } from "@store/hooks";
 
 const Login = () => {
+  const dispatch = useAppDispatch();
+  const navigate = useNavigate();
+  const{loading , error} = useAppSelector((state)=>state.auth)
   const {
     register,
     handleSubmit,
@@ -16,22 +22,37 @@ const Login = () => {
     mode: "onBlur",
     resolver: zodResolver(signInSchema),
   });
-  const submitForm: SubmitHandler<signInType> = (data) => {
-    console.log(data);
+  const [searchParams, setSearchParams] = useSearchParams();
+  const submitForm: SubmitHandler<signInType> = async(data) => {
+    if(searchParams.get("message"))
+      setSearchParams("")
+    dispatch(actAuthLogin(data))
+    .unwrap()
+    .then(()=>{
+      navigate("/");
+    });
   };
+ 
   return (
     <Fragment>
       <PageHeader />
+
       <div className="login-section padding-tb section-bg">
         <div className="container">
           <div className="account-wrapper">
+            {searchParams.get("message") && (
+              <Alert variant="success">
+                Your account successfully created, please login
+              </Alert>
+            )}
             <h3 className="title">Login</h3>
             <Form className="account-form" onSubmit={handleSubmit(submitForm)}>
               <Input
-                placeHolder="User Name *"
+                placeHolder="Email *"
                 register={register}
-                error={errors.username?.message}
-                name="username"
+                error={errors.email?.message}
+                name="email"
+                type="email"
               />
               <Input
                 placeHolder="Password *"
@@ -53,9 +74,20 @@ const Login = () => {
                   variant="primary"
                   type="submit"
                   className="lab-btn d-block"
+                  disabled={loading === "pending"}
                 >
+                  <>
+                    {loading === "pending" ? (
+                      <Spinner animation="border" size="sm" style={{marginRight:"4px"}}></Spinner>
+                    ) : (
+                      ""
+                    )}
+                  </>
                   Submit Now
                 </Button>
+                {error && (
+                  <p style={{ color: "#DC3545", marginTop: "10px" }}>{error}</p>
+                )}
               </Form.Group>
             </Form>
             <div className="account-bottom">

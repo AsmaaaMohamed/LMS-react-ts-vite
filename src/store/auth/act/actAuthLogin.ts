@@ -3,19 +3,26 @@ import axiosErrorHandler from "@utils/axiosErrorHandler";
 import axios from "axios";
 
 type TFormData = {
-    username: string;
     email: string;
     password: string;
+};
+type TResponse = {
+  user: {
+    id: number;
+    email: string;
+    username: string;
   };
-const actAuthRegister = createAsyncThunk(
-    "auth/actAuthRegister" ,
+  accessToken: string;
+};
+const actAuthLogin = createAsyncThunk(
+    "auth/actAuthLogin" ,
     async( formData:TFormData , thunk)=>{
         const {rejectWithValue} = thunk;
         try{
-            const res = await axios.post("/register" , formData);
+            const res = await axios.post<TResponse>("/login" , formData);
             return res.data;
         }catch(error){
             return rejectWithValue(axiosErrorHandler(error));
         }
 });
-export default actAuthRegister;
+export default actAuthLogin;
