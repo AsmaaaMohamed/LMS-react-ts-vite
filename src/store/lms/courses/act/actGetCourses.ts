@@ -14,6 +14,7 @@ const actGetCourses = createAsyncThunk("courses/actGetCourses" , async({category
     console.log(apiFilter)
     try {
         const response = await axios.get<TResponse>(`/courses?${apiFilter}`);
+        console.log(response)
         return response.data;
     } catch (error) {
         return rejectWithValue(axiosErrorHandler(error));

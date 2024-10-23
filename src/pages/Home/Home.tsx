@@ -44,10 +44,11 @@ const Home = () => {
   }
   useEffect(()=>{
     dispatch(actGetCoursesCategories());
-    dispatch(actGetCourses());
+    dispatch(actGetCourses({ category:'', price:'', course:'' }));
     dispatch(actGetPosts());
     dispatch(actGetInstructors());
     dispatch(actGetSkills());
+    console.log('dispatch')
   },[dispatch]);
   const mappedCategories = records.map((record)=>{
     return (
@@ -61,6 +62,7 @@ const Home = () => {
       </div>
     );
   });
+  // console.log(courses)
   const renderedPosts = posts.slice(0, 3).map((p) => {
     return (
       <div key={p.id} className="col">

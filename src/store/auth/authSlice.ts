@@ -1,8 +1,8 @@
 import TLoading from "@customTypes/shared";
-import { createSlice } from "@reduxjs/toolkit";
 import actAuthRegister from "./act/actAuthRegister";
 import { isString } from "@customTypes/guards";
 import actAuthLogin from "./act/actAuthLogin";
+import { createSlice } from "@reduxjs/toolkit";
 
 interface IAuthState{
     user:{
