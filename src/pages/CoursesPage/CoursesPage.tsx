@@ -3,7 +3,6 @@ import CustomFilter from "@components/common/CustomFilter/CustomFilter";
 import { PageHeader } from "@components/common";
 import CourseCard from "@components/lms/CourseCard/CourseCard";
 import { Form } from "react-bootstrap";
-import "./CoursesPage.css";
 import { useAppDispatch, useAppSelector } from "@store/hooks";
 import actGetCoursesCategories from "@store/lms/categories/act/actGetCategories";
 import actGetCourses from "@store/lms/courses/act/actGetCourses";
@@ -35,7 +34,7 @@ const CoursesPage = () => {
   return (
     <Fragment>
       <PageHeader />
-      <CustomFilter categoriesOptions={mappedOptions}/>
+      <CustomFilter categoriesOptions={mappedOptions} />
       <div className="course-section padding-tb section-bg">
         <div className="container">
           <div className="section-wrapper">
@@ -47,7 +46,12 @@ const CoursesPage = () => {
                 <div className="course-showing-part-right d-flex flex-wrap align-items-center">
                   <span>Sort by :</span>
                   <div className="select-item">
-                    <Form.Select aria-label="Default select example">
+                    <Form.Select
+                      aria-label="Default select example"
+                      style={{
+                        backgroundImage: `url("data:image/svg+xml,%3csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 16 16'%3e%3cpath fill='none' stroke='rgb(241 97 38)' stroke-linecap='round' stroke-linejoin='round' stroke-width='2' d='m2 5 6 6 6-6'/%3e%3c/svg%3e")`,
+                      }}
+                    >
                       <option value="all">All Skills</option>
                       <option value="css">CSS</option>
                       <option value="php">PHP</option>
