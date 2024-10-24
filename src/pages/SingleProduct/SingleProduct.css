@@ -102,16 +102,7 @@
     right: 0;
     top: 0;
 }
-.cart-plus-minus .qtybutton {
-    float: inherit;
-    font-size: 14px;
-    font-weight: 500;
-    height: 40px;
-    line-height: 40px;
-    text-align: center;
-    transition: all .3s ease;
-    width: 40px;
-}
+
 .shop-single .review .review-nav li {
     background: #06264d;
     color: #fff;
